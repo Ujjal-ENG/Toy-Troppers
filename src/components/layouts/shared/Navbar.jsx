@@ -39,9 +39,9 @@ const Navbar = () => {
     const navItems = (
         <div className="flex flex-col md:flex-row justify-evenly items-center gap-8 text-2xl font-bold">
             <NavLink to="/">Home</NavLink>
+            <NavLink to="/all-toys">All Toys</NavLink>
             {userInfo && (
                 <>
-                    <NavLink to="/all-toys">All Toys</NavLink>
                     <NavLink to="/my-toys">My Toys</NavLink>
                     <NavLink to="/add-a-toys">Add a Toys</NavLink>
                 </>
