@@ -1,5 +1,5 @@
 {
-    "name": "my-react-template",
+    "name": "toy-troppers",
     "private": true,
     "version": "0.0.0",
     "type": "module",
@@ -10,6 +10,7 @@
         "lint": "npm i -D prettier && npm i -D babel-eslint && npx install-peerdeps --dev eslint-config-airbnb && npm i -D eslint-config-prettier eslint-plugin-prettier"
     },
     "dependencies": {
+        "aos": "^3.0.0-beta.6",
         "axios": "^1.4.0",
         "daisyui": "^2.51.6",
         "firebase": "^9.22.0",
@@ -17,9 +18,12 @@
         "match-sorter": "^6.3.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-google-button": "^0.7.2",
+        "react-icons": "^4.8.0",
         "react-router-dom": "^6.10.0",
         "sort-by": "^0.0.2",
-        "sweetalert2": "^11.4.8"
+        "sweetalert2": "^11.4.8",
+        "swiper": "^9.3.2"
     },
     "devDependencies": {
         "@types/react": "^18.0.28",

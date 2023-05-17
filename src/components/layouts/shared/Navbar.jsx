@@ -5,9 +5,9 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React, { useContext, useEffect, useState } from 'react';
 
-import { NavLink, useNavigation } from 'react-router-dom';
-import Logo from '../../../../assets/Logo.png';
-import { AuthContext } from '../../../../context/AuthProvider';
+import { Link, NavLink, useNavigation } from 'react-router-dom';
+import Logo from '../../../assets/Logo.png';
+import { AuthContext } from '../../../context/AuthProvider';
 
 const Navbar = () => {
     const { userInfo, logOutUser } = useContext(AuthContext);
@@ -77,9 +77,9 @@ const Navbar = () => {
                         LogOut
                     </button>
                 ) : (
-                    <NavLink to="/login" type="button" className="btn btn-primary font-bold btn-sm md:btn-md">
+                    <Link to="/login" type="button" className="btn btn-primary font-bold btn-sm md:btn-md">
                         Login
-                    </NavLink>
+                    </Link>
                 )}
                 {userInfo && (
                     <div className="avatar">
