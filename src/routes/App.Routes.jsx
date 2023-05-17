@@ -2,7 +2,7 @@
 /* eslint-disable comma-dangle */
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
-import Home from '../components/pages/Home';
+import Home from '../components/pages/HomePage/Home';
 
 export const router = createBrowserRouter([
     {
