@@ -91,6 +91,12 @@ function AuthProvider({ children }) {
     const logOutUser = async () => {
         await signOut(auth);
         navigate('/');
+        Swal.fire({
+            icon: 'success',
+            title: 'Successfully LoggedOut!!!',
+            showConfirmButton: false,
+            timer: 1500
+        });
     };
 
     const singInGoogle = async () => {
