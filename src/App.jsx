@@ -7,8 +7,10 @@ import Navbar from './components/layouts/shared/Navbar';
 const App = () => {
     return (
         <AuthProvider>
-            <Navbar />
-            <Outlet />
+            <div className="my-container">
+                <Navbar />
+                <Outlet />
+            </div>
             <Footer />
         </AuthProvider>
     );

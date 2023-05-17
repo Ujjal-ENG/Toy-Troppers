@@ -3,22 +3,55 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import Logo from '../../../../assets/logo.gif';
+import React, { useContext, useEffect, useState } from 'react';
+
+import { NavLink, useNavigation } from 'react-router-dom';
+import Logo from '../../../../assets/Logo.png';
+import { AuthContext } from '../../../../context/AuthProvider';
 
 const Navbar = () => {
+    const { userInfo, logOutUser } = useContext(AuthContext);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.pageYOffset;
+            if (scrollTop > 88 && !isScrolled) {
+                setIsScrolled(true);
+            } else if (scrollTop === 0 && isScrolled) {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [isScrolled]);
+
+    const navigation = useNavigation();
+    if (navigation.state === 'loading') {
+        return (
+            <div className="h-screen flex justify-center items-center">
+                <progress className="progress w-56" />
+            </div>
+        );
+    }
+
     const navItems = (
         <div className="flex flex-col md:flex-row justify-evenly items-center gap-8 text-2xl font-bold">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/donations">Donation</NavLink>
-            <NavLink to="/book-events/id">Events</NavLink>
-            <NavLink to="/blogs">Blog</NavLink>
+            {userInfo && (
+                <>
+                    <NavLink to="/all-toys">All Toys</NavLink>
+                    <NavLink to="/my-toys">My Toys</NavLink>
+                    <NavLink to="/add-a-toys">Add a Toys</NavLink>
+                </>
+            )}
+            <NavLink to="/blogs">Blogs</NavLink>
         </div>
     );
 
     return (
-        <div className="navbar max-w-7xl mx-auto relative z-30">
+        <div className="navbar mx-auto relative z-30">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -30,17 +63,31 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <button type="button" className="btn btn-ghost normal-case text-xl">
-                    <img src={Logo} alt="logo" className="w-14 md:w-32 h-12  object-center" />
-                </button>
+                <div className="flex md:flex-row flex-col justify-center items-center gap-2">
+                    <img src={Logo} alt="logo" className="w-14 md:w-32 h-20  object-center" />
+                    <h3 className="text-primary text-xl font-bold">Toy|Troppers</h3>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">{navItems}</ul>
             </div>
-            <div className="navbar-end">
-                <NavLink to="/login" type="button" className="btn btn-sm md:btn-md btn-info">
-                    Login/Register
-                </NavLink>
+            <div className="navbar-end space-x-3">
+                {userInfo ? (
+                    <button type="button" className="btn btn-active" onClick={() => logOutUser()}>
+                        LogOut
+                    </button>
+                ) : (
+                    <NavLink to="/login" type="button" className="btn btn-primary font-bold btn-sm md:btn-md">
+                        Login
+                    </NavLink>
+                )}
+                {userInfo && (
+                    <div className="avatar">
+                        <div className="w-14 rounded-full">
+                            <img src="https://images.pexels.com/photos/16249368/pexels-photo-16249368.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="avatar" />
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );

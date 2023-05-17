@@ -5,7 +5,7 @@
 /* Tailwind CSS custom Style and Using this style whatever i want */
 
 .my-container {
-    @apply px-4 py-16 mx-auto sm:max-w-xl md:max-w-7xl  lg:py-10;
+    @apply px-4 py-10 mx-auto sm:max-w-xl md:max-w-[1500px]  lg:py-5;
 }
 
 @layer components {
