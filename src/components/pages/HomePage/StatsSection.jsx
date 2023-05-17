@@ -53,24 +53,29 @@ const StatsSection = () => {
     }, [isInView]);
 
     return (
-        <div ref={sectionRef} className="flex justify-center pt-9 items-center">
-            <div className="stats shadow max-w-5xl w-full">
-                <div className="stat place-items-center">
-                    <div className="stat-title">Visitors</div>
-                    <div className="stat-value">{counter}</div>
-                </div>
+        <>
+            <h1 data-aos="fade-up" className="text-4xl font-bold tracking-wider text-center  pt-12">
+                Stats
+            </h1>
+            <div data-aos="zoom-in" ref={sectionRef} className="flex justify-center pt-9 items-center">
+                <div className="stats shadow max-w-5xl w-full">
+                    <div className="stat place-items-center">
+                        <div className="stat-title">Visitors</div>
+                        <div className="stat-value">{counter}</div>
+                    </div>
 
-                <div className="stat place-items-center">
-                    <div className="stat-title">Users</div>
-                    <div className="stat-value text-secondary">{counter}</div>
-                </div>
+                    <div className="stat place-items-center">
+                        <div className="stat-title">Users</div>
+                        <div className="stat-value text-secondary">{counter}</div>
+                    </div>
 
-                <div className="stat place-items-center">
-                    <div className="stat-title">New Registers</div>
-                    <div className="stat-value">{counter}</div>
+                    <div className="stat place-items-center">
+                        <div className="stat-title">New Registers</div>
+                        <div className="stat-value">{counter}</div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
