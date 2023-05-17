@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import BannerSlider from './BannerSlider';
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+    return (
+        <div>
+            <BannerSlider />
+        </div>
+    );
+};
 
-export default Home
+export default Home;
