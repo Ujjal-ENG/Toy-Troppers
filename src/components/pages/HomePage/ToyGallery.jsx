@@ -21,7 +21,7 @@ const ToyGallery = () => {
                         data-aos-anchor-placement="top-center"
                         className="flex w-full mb-20 flex-wrap">
                         <h1 className="sm:text-3xl text-2xl title-font text-primary font-bold lg:w-1/3 lg:mb-0 mb-4">Master Cleanse Toy | Troppers Gallery</h1>
-                        <p className="lg:pl-6 lg:w-2/3 tracking-wider mx-auto leading-relaxed text-base">
+                        <p className="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">
                             Welcome to our <span className="md:text-xl text-sm font-bold text-orange-600">Toy-Troppers Gallery!</span> Discover a captivating collection of toy photos that showcase the
                             magic and wonder of these playful companions. From action figures to superheroes, each photo tells a unique story, capturing the vibrant colors and intricate details of
                             these beloved toys. Let the photos inspire your imagination and relish in the joy they bring. Explore our Toy Gallery and embark on a visual journey filled with excitement,
