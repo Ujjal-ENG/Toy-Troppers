@@ -17,6 +17,8 @@ import {
 import React, { createContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.css';
+
 import app from '../config/firebase';
 
 export const AuthContext = createContext(null);
@@ -46,7 +48,7 @@ function AuthProvider({ children }) {
                 timer: 1500
             });
 
-            signOut(auth);
+            await signOut(auth);
             setIsLoading(false);
             navigate('/login');
         } catch (error) {
