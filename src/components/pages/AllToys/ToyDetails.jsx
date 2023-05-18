@@ -20,7 +20,7 @@ const ToyDetails = () => {
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
-                title: 'Items is Added In Favourite section and this Section comming soon.',
+                title: 'Items is Added In Favorites section and this Section coming soon.',
                 showConfirmButton: false,
                 // eslint-disable-next-line comma-dangle
                 timer: 1500
