@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-indent-props */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-unused-vars */
 /* eslint-disable comma-dangle */
@@ -19,10 +20,10 @@ export default function AddToyPage() {
         handleSubmit,
         formState: { errors }
     } = useForm();
-
+    console.log(errors);
     const onSubmit = async (data) => {
         setIsLoading(true);
-        data.addedUser = userInfo.email;
+        console.log(data);
         try {
             const response = await axios.post('http://localhost:8080/add-toys', { data });
             if (response?.data?.success) {
@@ -79,7 +80,14 @@ export default function AddToyPage() {
                         <label htmlFor="sellerEmail" className="block font-medium mb-2">
                             Seller Email
                         </label>
-                        <input type="email" id="sellerEmail" {...register('sellerEmail', { required: true })} className="input input-bordered input-primary w-full" value={userInfo?.email} disabled />
+                        <input
+                            type="email"
+                            id="sellerEmail"
+                            {...register('sellerEmail', { required: false })}
+                            className="input input-bordered input-primary w-full"
+                            value={userInfo && userInfo.email ? userInfo.email : ''}
+                            readOnly
+                        />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="subCategory" className="block font-medium mb-2">
@@ -101,7 +109,7 @@ export default function AddToyPage() {
                         <label htmlFor="rating" className="block font-medium mb-2">
                             Rating
                         </label>
-                        <input type="text" id="rating" {...register('rating', { required: true })} className="input input-bordered input-primary w-full" required />
+                        <input type="number" id="rating" {...register('rating', { required: true })} step="0.01" min={1} max={5} className="input input-bordered input-primary w-full" required />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="quantity" className="block font-medium mb-2">

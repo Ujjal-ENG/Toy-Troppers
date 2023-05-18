@@ -3,6 +3,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 import AddAToys from '../components/pages/AddATOys/AddAToys';
+import AllToys from '../components/pages/AllToys/AllToys';
+import ToyDetails from '../components/pages/AllToys/ToyDetails';
 import Home from '../components/pages/HomePage/Home';
 import ForgotPassword from '../components/pages/Login&Register/ForgotPassword';
 import Login from '../components/pages/Login&Register/Login';
@@ -29,12 +31,26 @@ export const router = createBrowserRouter([
                 loader: async ({ params }) => fetch(`http://localhost:8080/single-toys-details/${params.id}`)
             },
             {
+                path: 'all-toys/toy-details/:id',
+                element: (
+                    <PrivateRoute>
+                        <ToyDetails />
+                    </PrivateRoute>
+                ),
+                loader: async ({ params }) => fetch(`http://localhost:8080/single-toys-details/${params.id}`)
+            },
+            {
                 path: '/add-a-toys',
                 element: (
                     <PrivateRoute>
                         <AddAToys />
                     </PrivateRoute>
                 )
+            },
+            {
+                path: '/all-toys',
+                element: <AllToys />,
+                loader: async () => fetch('http://localhost:8080/all-toys')
             },
             {
                 path: '/login',
