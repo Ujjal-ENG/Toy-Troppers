@@ -8,7 +8,7 @@ import { AuthContext } from '../context/AuthProvider';
 function PrivateRoute({ children }) {
     const { userInfo, privateLoad } = useContext(AuthContext);
     const location = useLocation();
-    if (location.pathname.includes('details')) {
+    if (location.pathname.includes('details') && !userInfo) {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
