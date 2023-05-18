@@ -23,10 +23,11 @@ const MyToys = () => {
     const [toys, setToys] = useState([]);
     const [editData, setEditData] = useState(null);
     const [update, setUpdate] = useState(false);
+    const [sortBy, setSortBy] = useState('');
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const { data } = await axios.get(`http://localhost:8080/my-toys?sellerEmail=${userInfo?.email}`);
+                const { data } = await axios.get(`http://localhost:8080/my-toys?sellerEmail=${userInfo?.email}&sortBy=${sortBy}`);
                 if (data.success) {
                     setToys(data.toys);
                 }
@@ -35,7 +36,7 @@ const MyToys = () => {
             }
         };
         fetchData();
-    }, [update]);
+    }, [update, sortBy]);
 
     const handleEdit = (id) => {
         // console.log(id);
@@ -80,9 +81,12 @@ const MyToys = () => {
     const handleUpdate = (data) => {
         setUpdate((ps) => ({ ...ps, ...data }));
     };
+    const handleSort = (data) => {
+        setSortBy(data);
+    };
     return (
         <div>
-            <SortByPrice onSort="asc" />
+            <SortByPrice onSort="asc" handleSorts={handleSort} />
             <div className="overflow-x-auto w-full   my-10">
                 <table className="table w-full text-center">
                     {/* head */}
