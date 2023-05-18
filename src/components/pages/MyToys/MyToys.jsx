@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable react-hooks/exhaustive-deps */
@@ -10,6 +11,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { AiFillDelete } from 'react-icons/ai';
 import { BiEdit } from 'react-icons/bi';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../../context/AuthProvider';
 import useTitleChange from '../../../hooks/useTitleChange';
 import EditModal from './EditModal';
@@ -39,7 +41,40 @@ const MyToys = () => {
         setEditData(id);
     };
     const handleDelete = (id) => {
-        console.log(id);
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        });
+
+        swalWithBootstrapButtons
+            .fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            })
+            .then(async (result) => {
+                if (result.isConfirmed) {
+                    // Delete the file
+                    try {
+                        const response = await axios.delete(`http://localhost:8080/delete-toys-details?id=${id}`);
+                        if (response.data.success) {
+                            swalWithBootstrapButtons.fire('Deleted!', 'Your file has been deleted.', 'success');
+                            setUpdate(!update);
+                        }
+                    } catch (error) {
+                        console.log(error);
+                    }
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    swalWithBootstrapButtons.fire('Cancelled', 'Your imaginary file is safe :)', 'error');
+                }
+            });
     };
     const handleUpdate = (data) => {
         setUpdate((ps) => ({ ...ps, ...data }));
