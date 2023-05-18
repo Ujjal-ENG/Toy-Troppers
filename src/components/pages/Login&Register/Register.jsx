@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable jsx-a11y/iframe-has-title */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/jsx-no-undef */
@@ -7,7 +8,9 @@
 import { useContext, useState } from 'react';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { FaEnvelope, FaLock, FaUser } from 'react-icons/fa';
+import Lottie from 'react-lottie';
 import { Link } from 'react-router-dom';
+import animationData from '../../../assets/json/registration.json';
 import { AuthContext } from '../../../context/AuthProvider';
 
 function Register() {
@@ -57,6 +60,14 @@ function Register() {
         }
     };
 
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        }
+    };
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 my-container gap-7">
             <div className="min-h-screen shadow-xl  duration-200 transition-shadow ease-in-out  hover:shadow-2xl  flex justify-center items-center order-2 md:order-1">
@@ -165,7 +176,7 @@ function Register() {
                 </div>
             </div>
             <div>
-                <iframe src="https://embed.lottiefiles.com/animation/112454" className="w-full h-[200px] md:min-h-screen" />
+                <Lottie options={defaultOptions} height={700} width={400} />
             </div>
         </div>
     );

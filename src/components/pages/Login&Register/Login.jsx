@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable object-curly-newline */
 /* eslint-disable jsx-a11y/iframe-has-title */
 /* eslint-disable react/jsx-closing-bracket-location */
@@ -10,7 +11,9 @@ import { useContext, useState } from 'react';
 import GoogleButton from 'react-google-button';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
+import Lottie from 'react-lottie';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import animationData from '../../../assets/json/login.json';
 import { AuthContext } from '../../../context/AuthProvider';
 
 function Login() {
@@ -32,6 +35,14 @@ function Login() {
         navigate(from);
     };
 
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        }
+    };
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 my-container ">
             <div className=" shadow-2xl rounded-md flex flex-col justify-center py-12 sm:px-6 lg:px-8 order-2 md:order-1">
@@ -142,7 +153,7 @@ function Login() {
                 data-aos-once="false"
                 data-aos-anchor-placement="top-center"
                 className="flex flex-col items-center lg:items-start mb-10 lg:mb-0">
-                <iframe src="https://embed.lottiefiles.com/animation/67378" className="w-full h-[200px] md:min-h-screen" />
+                <Lottie options={defaultOptions} height={700} width={600} />
             </div>
         </div>
     );

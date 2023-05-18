@@ -44,6 +44,17 @@ const BannerSlider = () => {
                 <div
                     className="hero min-h-[80vh]"
                     style={{
+                        backgroundImage: 'url("https://img.freepik.com/premium-vector/gradient-winter-sale-illustration_52683-75554.jpg?w=1060")',
+                        borderRadius: 10,
+                        objectFit: 'cover'
+                    }}>
+                    <div className="hero-overlay bg-opacity-10" />
+                </div>
+            </SwiperSlide>
+            <SwiperSlide className=" border-2  rounded-lg">
+                <div
+                    className="hero min-h-[80vh]"
+                    style={{
                         backgroundImage:
                             'url("https://ae01.alicdn.com/kf/HTB1azz.DASWBuNjSszdq6zeSpXay/6pcs-set-Marvel-Avengers-Infinity-War-Thanos-Ironman-Spiderman-Captain-American-Hulk-Black-Panther-PVC-Figure.jpg_Q90.jpg_.webp")',
                         borderRadius: 10,
