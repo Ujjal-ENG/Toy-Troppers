@@ -76,7 +76,7 @@ const ShopByCategory = () => {
                                         <h3 className="text-primary font-bold text-xl">Price: ${el.price}</h3>
                                         <ReactStars value={el.rating} size={28} isHalf edit={false} emptyIcon={<BsStar />} halfIcon={<BsStarHalf />} fullIcon={<BsStarFill />} activeColor="#ffd700" />
                                     </div>
-                                    <Link to={`single-toy-details/:${el._id}`} className="btn btn-primary btn-block inline-flex gap-3 text-xl font-bold items-center mt-3">
+                                    <Link to={`single-toy-details/:${el._id}`} state={el} className="btn btn-primary btn-block inline-flex gap-3 text-xl font-bold items-center mt-3">
                                         View Details
                                         <FiArrowRight className="text-3xl font-bold" />
                                     </Link>
