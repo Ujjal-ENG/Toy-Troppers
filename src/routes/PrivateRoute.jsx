@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable react/jsx-indent */
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
@@ -7,14 +8,14 @@ import { AuthContext } from '../context/AuthProvider';
 function PrivateRoute({ children }) {
     const { userInfo, privateLoad } = useContext(AuthContext);
     const location = useLocation();
-    if (location.pathname.includes('/all-toys/-toy-details')) {
+    if (location.pathname.includes('details')) {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Something went wrong!',
-            footer: '<a href="">Why do I have this issue?</a>'
+            text: 'You have to log in first to view details!'
         });
     }
+
     if (privateLoad) {
         return (
             <div className="h-screen flex justify-center items-center">
