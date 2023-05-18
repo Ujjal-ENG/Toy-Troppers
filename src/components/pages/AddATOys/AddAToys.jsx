@@ -4,7 +4,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import axios from 'axios';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Lottie from 'react-lottie';
 import Swal from 'sweetalert2';
@@ -13,7 +13,7 @@ import { AuthContext } from '../../../context/AuthProvider';
 
 export default function AddToyPage() {
     const { userInfo } = useContext(AuthContext);
-
+    const [loading, setIsLoading] = useState(false);
     const {
         register,
         handleSubmit,
@@ -21,7 +21,7 @@ export default function AddToyPage() {
     } = useForm();
 
     const onSubmit = async (data) => {
-        console.log(data);
+        setIsLoading(true);
         data.addedUser = userInfo.email;
         try {
             const response = await axios.post('http://localhost:8080/add-toys', { data });
@@ -33,8 +33,10 @@ export default function AddToyPage() {
                     showConfirmButton: false,
                     timer: 1500
                 });
+                setIsLoading(false);
             }
         } catch (error) {
+            setIsLoading(false);
             console.log(error);
         }
     };
@@ -114,9 +116,15 @@ export default function AddToyPage() {
                         <textarea id="description" {...register('description', { required: true })} className="input input-bordered input-primary w-full" rows={10} />
                     </div>
                     <div className="mt-8">
-                        <button type="submit" className="btn btn-block btn-primary">
-                            Add Toy
-                        </button>
+                        {loading ? (
+                            <button type="button" className="btn loading btn-block">
+                                loading
+                            </button>
+                        ) : (
+                            <button type="submit" className="btn btn-block btn-primary">
+                                Add Toy
+                            </button>
+                        )}
                     </div>
                 </form>
 
