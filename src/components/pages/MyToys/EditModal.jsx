@@ -1,3 +1,6 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-unused-vars */
+/* eslint-disable comma-dangle */
 /* eslint-disable react/jsx-indent-props */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/no-unescaped-entities */
