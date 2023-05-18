@@ -7,6 +7,7 @@ import ForgotPassword from '../components/pages/Login&Register/ForgotPassword';
 import Login from '../components/pages/Login&Register/Login';
 import Register from '../components/pages/Login&Register/Register';
 import SingleToyDetails from '../components/pages/ToyDetails/SingleToyDetails';
+import PrivateRoute from './PrivateRoute';
 
 export const router = createBrowserRouter([
     {
@@ -19,7 +20,12 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'single-toy-details/:id',
-                element: <SingleToyDetails />
+                element: (
+                    <PrivateRoute>
+                        <SingleToyDetails />
+                    </PrivateRoute>
+                ),
+                loader: async ({ params }) => fetch(`http://localhost:8080/single-toys-details/${params.id}`)
             },
             {
                 path: '/login',

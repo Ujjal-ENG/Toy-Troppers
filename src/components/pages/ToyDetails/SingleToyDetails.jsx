@@ -9,12 +9,11 @@
 import React, { useState } from 'react';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import ReactStars from 'react-rating-stars-component';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const SingleToyDetails = () => {
-    const { state } = useLocation();
-    console.log(state);
+    const { toys } = useLoaderData();
     const [isFavorite, setIsFavorite] = useState(false);
     {
         isFavorite &&
@@ -32,13 +31,13 @@ const SingleToyDetails = () => {
             <section className="text-gray-600 body-font overflow-hidden">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
-                        <img alt={state.name} className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={state.pictureUrl} />
+                        <img alt={toys?.name} className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={toys?.pictureUrl} />
                         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                            <h2 className="text-xl title-font text-gray-500 font-bold  tracking-widest">{state.subCategory}</h2>
-                            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{state.name}</h1>
+                            <h2 className="text-xl title-font text-gray-500 font-bold  tracking-widest">{toys?.subCategory}</h2>
+                            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{toys?.name}</h1>
                             <div className="flex mb-4">
                                 <span className="flex justify-center items-center">
-                                    <ReactStars value={state.rating} size={28} isHalf edit={false} emptyIcon={<BsStar />} halfIcon={<BsStarHalf />} fullIcon={<BsStarFill />} activeColor="#ffd700" />
+                                    <ReactStars value={toys?.rating} size={28} isHalf edit={false} emptyIcon={<BsStar />} halfIcon={<BsStarHalf />} fullIcon={<BsStarFill />} activeColor="#ffd700" />
                                     <span className="text-gray-600 ml-3">4 Reviews</span>
                                 </span>
 
@@ -63,10 +62,10 @@ const SingleToyDetails = () => {
                             <div className="my-3 flex mt-6 gap-3 items-start pb-5 border-y-2 border-gray-200 mb-5 flex-col">
                                 <span className="title-font font-medium text-2xl text-primary">Seller Information</span>
 
-                                <span className="title-font font-medium text-xl text-black">Seller Name: {state.sellerName}</span>
-                                <span className="title-font font-medium text-xl text-orange-500">Seller Email: {state.sellerEmail}</span>
+                                <span className="title-font font-medium text-xl text-black">Seller Name: {toys?.sellerName}</span>
+                                <span className="title-font font-medium text-xl text-orange-500">Seller Email: {toys?.sellerEmail}</span>
                             </div>
-                            <p className="leading-relaxed">{state.detailDescription}</p>
+                            <p className="leading-relaxed">{toys?.detailDescription}</p>
                             <div className="flex mt-6 gap-3 items-center pb-5 border-b-2 border-gray-100 mb-5">
                                 <div className="flex items-center ">
                                     <span className="mr-3">Color</span>
@@ -74,10 +73,10 @@ const SingleToyDetails = () => {
                                     <p className="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none" />
                                     <p className="border-2 border-gray-300 ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none" />
                                 </div>
-                                <span className="title-font font-medium text-2xl text-orange-600">AvailableQuantity: {state.availableQuantity}</span>
+                                <span className="title-font font-medium text-2xl text-orange-600">AvailableQuantity: {toys?.availableQuantity}</span>
                             </div>
                             <div className="flex">
-                                <span className="title-font font-medium text-2xl text-gray-900">${state.price}</span>
+                                <span className="title-font font-medium text-2xl text-gray-900">${toys?.price}</span>
                                 <Link to="/" type="button" className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
                                     Buy Now
                                 </Link>
