@@ -71,6 +71,9 @@ const MyToys = () => {
                                                     Name: <span className="font-bold text-orange-600">{toy?.name}</span>
                                                 </div>
                                                 <div className="">
+                                                    SubCategory: <span className="font-bold text-orange-600">{toy?.subCategory}</span>
+                                                </div>
+                                                <div className="">
                                                     AVAILABLE QUANTITY: <span className="font-bold text-orange-600">{toy?.availableQuantity}</span>
                                                 </div>
                                             </div>
