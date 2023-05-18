@@ -1,21 +1,42 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-unused-vars */
 /* eslint-disable comma-dangle */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/label-has-associated-control */
+import axios from 'axios';
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import Lottie from 'react-lottie';
+import Swal from 'sweetalert2';
 import animationData from '../../../assets/json/add-toy-register.json';
+import { AuthContext } from '../../../context/AuthProvider';
 
 export default function AddToyPage() {
+    const { userInfo } = useContext(AuthContext);
+
     const {
         register,
         handleSubmit,
         formState: { errors }
     } = useForm();
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         console.log(data);
-        // Handle form submission logic here
+        data.addedUser = userInfo.email;
+        try {
+            const response = await axios.post('http://localhost:8080/add-toys', { data });
+            if (response?.data?.success) {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your Toy Data has been saved!!',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     const defaultOptions = {
@@ -38,31 +59,31 @@ export default function AddToyPage() {
                         <label htmlFor="pictureUrl" className="block font-medium mb-2">
                             Picture URL of the toy
                         </label>
-                        <input type="text" id="pictureUrl" {...register('pictureUrl')} className="input input-bordered input-primary w-full" required />
+                        <input type="text" id="pictureUrl" {...register('pictureUrl', { required: true })} className="input input-bordered input-primary w-full" required />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="name" className="block font-medium mb-2">
                             Name
                         </label>
-                        <input type="text" id="name" {...register('name')} className="input input-bordered input-primary w-full" required />
+                        <input type="text" id="name" {...register('name', { required: true })} className="input input-bordered input-primary w-full" required />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="sellerName" className="block font-medium mb-2">
                             Seller Name
                         </label>
-                        <input type="text" id="sellerName" {...register('sellerName')} className="input input-bordered input-primary w-full" />
+                        <input type="text" id="sellerName" {...register('sellerName', { required: true })} className="input input-bordered input-primary w-full" />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="sellerEmail" className="block font-medium mb-2">
                             Seller Email
                         </label>
-                        <input type="email" id="sellerEmail" {...register('sellerEmail')} className="input input-bordered input-primary w-full" />
+                        <input type="email" id="sellerEmail" {...register('sellerEmail', { required: true })} className="input input-bordered input-primary w-full" />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="subCategory" className="block font-medium mb-2">
                             Sub-category
                         </label>
-                        <select id="subCategory" {...register('subCategory')} className="input input-bordered input-primary w-full">
+                        <select id="subCategory" {...register('subCategory', { required: true })} className="input input-bordered input-primary w-full">
                             <option value="Marvel">Marvel</option>
                             <option value="Star Wars">Star Wars</option>
                             <option value="Transformers">Transformers</option>
@@ -72,25 +93,25 @@ export default function AddToyPage() {
                         <label htmlFor="price" className="block font-medium mb-2">
                             Price
                         </label>
-                        <input type="number" id="price" {...register('price')} className="input input-bordered input-primary w-full" required />
+                        <input type="number" id="price" {...register('price', { required: true })} className="input input-bordered input-primary w-full" required />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="rating" className="block font-medium mb-2">
                             Rating
                         </label>
-                        <input type="text" id="rating" {...register('rating')} className="input input-bordered input-primary w-full" required />
+                        <input type="text" id="rating" {...register('rating', { required: true })} className="input input-bordered input-primary w-full" required />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="quantity" className="block font-medium mb-2">
                             Available Quantity
                         </label>
-                        <input type="number" id="quantity" {...register('quantity')} className="input input-bordered input-primary w-full" required />
+                        <input type="number" id="quantity" {...register('quantity', { required: true })} className="input input-bordered input-primary w-full" required />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="description" className="block font-medium mb-2">
                             Detail Description
                         </label>
-                        <textarea id="description" {...register('description')} className="input input-bordered input-primary w-full" rows={10} />
+                        <textarea id="description" {...register('description', { required: true })} className="input input-bordered input-primary w-full" rows={10} />
                     </div>
                     <div className="mt-8">
                         <button type="submit" className="btn btn-block btn-primary">
