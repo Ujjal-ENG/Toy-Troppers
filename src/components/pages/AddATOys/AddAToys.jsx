@@ -11,8 +11,10 @@ import Lottie from 'react-lottie';
 import Swal from 'sweetalert2';
 import animationData from '../../../assets/json/add-toy-register.json';
 import { AuthContext } from '../../../context/AuthProvider';
+import useTitleChange from '../../../hooks/useTitleChange';
 
 export default function AddToyPage() {
+    useTitleChange('Add-A-Toys');
     const { userInfo } = useContext(AuthContext);
     const [loading, setIsLoading] = useState(false);
     const {

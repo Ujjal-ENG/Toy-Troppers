@@ -5,8 +5,10 @@
 import React from 'react';
 import { FiArrowRight } from 'react-icons/fi';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitleChange from '../../../hooks/useTitleChange';
 
 const AllToys = () => {
+    useTitleChange('All-Toys');
     const { toys } = useLoaderData();
 
     return (

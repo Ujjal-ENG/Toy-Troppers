@@ -2,8 +2,10 @@
 /* eslint-disable react/jsx-indent */
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../context/AuthProvider';
+import useTitleChange from '../../../hooks/useTitleChange';
 
 function ForgotPassword() {
+    useTitleChange('Forgot-Password');
     const { resetPassword } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     return (

@@ -12,8 +12,10 @@ import Lottie from 'react-lottie';
 import { Link } from 'react-router-dom';
 import animationData from '../../../assets/json/registration.json';
 import { AuthContext } from '../../../context/AuthProvider';
+import useTitleChange from '../../../hooks/useTitleChange';
 
 function Register() {
+    useTitleChange('Registration');
     const { createUser } = useContext(AuthContext);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');

@@ -15,8 +15,10 @@ import Lottie from 'react-lottie';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import animationData from '../../../assets/json/login.json';
 import { AuthContext } from '../../../context/AuthProvider';
+import useTitleChange from '../../../hooks/useTitleChange';
 
 function Login() {
+    useTitleChange('Login');
     const { signInUser, singInGoogle } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
