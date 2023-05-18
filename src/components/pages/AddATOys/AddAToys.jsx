@@ -79,7 +79,7 @@ export default function AddToyPage() {
                         <label htmlFor="sellerEmail" className="block font-medium mb-2">
                             Seller Email
                         </label>
-                        <input type="email" id="sellerEmail" {...register('sellerEmail', { required: true })} className="input input-bordered input-primary w-full" />
+                        <input type="email" id="sellerEmail" {...register('sellerEmail', { required: true })} className="input input-bordered input-primary w-full" value={userInfo?.email} disabled />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="subCategory" className="block font-medium mb-2">
