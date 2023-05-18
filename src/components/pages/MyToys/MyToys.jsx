@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable operator-linebreak */
 /* eslint-disable no-underscore-dangle */
@@ -10,13 +12,14 @@ import { AiFillDelete } from 'react-icons/ai';
 import { BiEdit } from 'react-icons/bi';
 import { AuthContext } from '../../../context/AuthProvider';
 import useTitleChange from '../../../hooks/useTitleChange';
+import EditModal from './EditModal';
 
 const MyToys = () => {
     useTitleChange('My-Toys');
-
     const { userInfo } = useContext(AuthContext);
     const [toys, setToys] = useState([]);
-
+    const [editData, setEditData] = useState(null);
+    const [update, setUpdate] = useState(false);
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -29,15 +32,18 @@ const MyToys = () => {
             }
         };
         fetchData();
-    }, []);
+    }, [update]);
 
     const handleEdit = (id) => {
-        console.log(id);
+        // console.log(id);
+        setEditData(id);
     };
     const handleDelete = (id) => {
         console.log(id);
     };
-
+    const handleUpdate = (data) => {
+        setUpdate((ps) => ({ ...ps, ...data }));
+    };
     return (
         <div>
             <div className="overflow-x-auto w-full   my-10">
@@ -87,9 +93,9 @@ const MyToys = () => {
                                     <td className="text-xl font-bold">${toy?.price}</td>
                                     <td className="truncate line-clamp-10 max-w-[150px] ">{toy?.detailDescription}</td>
                                     <th>
-                                        <button type="button" className="btn btn-ghost btn-md" onClick={() => handleEdit(toy._id)}>
+                                        <label htmlFor="my-modal-5" type="button" className="btn btn-ghost btn-md" onClick={() => handleEdit(toy)}>
                                             <BiEdit className="text-3xl text-orange-500" />
-                                        </button>
+                                        </label>
                                         <button type="button" className="btn btn-ghost btn-md" onClick={() => handleDelete(toy._id)}>
                                             <AiFillDelete className="text-3xl text-red-500" />
                                         </button>
@@ -99,6 +105,7 @@ const MyToys = () => {
                     </tbody>
                 </table>
             </div>
+            <EditModal updateData={editData} handleUpdate={handleUpdate} />
         </div>
     );
 };

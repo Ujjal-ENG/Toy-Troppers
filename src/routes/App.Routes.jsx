@@ -55,7 +55,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/my-toys',
-                element: <MyToys />
+                element: (
+                    <PrivateRoute>
+                        <MyToys />
+                    </PrivateRoute>
+                )
             },
             {
                 path: '/login',
