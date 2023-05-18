@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable operator-linebreak */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable max-len */
@@ -55,9 +56,9 @@ const MyToys = () => {
                     <tbody>
                         {/* row 1 */}
                         {toys &&
-                            toys.map((toy) => (
+                            toys.map((toy, idx) => (
                                 <tr key={toy?._id}>
-                                    <th>1</th>
+                                    <th>{idx + 1}</th>
                                     <td>
                                         <div className="flex items-center justify-center space-x-3">
                                             <div className="avatar">
