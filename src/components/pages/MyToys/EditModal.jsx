@@ -6,14 +6,28 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import axios from 'axios';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../../context/AuthProvider';
 
-const EditModal = ({ updateData, handleUpdate }) => {
+const EditModal = ({ id, handleUpdate }) => {
     const { userInfo } = useContext(AuthContext);
     const [loading, setIsLoading] = useState(false);
+    const [updateData, setUpdateData] = useState({});
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const { data } = await axios.get(`http://localhost:8080/single-toys-details/${id}`);
+                if (data.success) {
+                    setUpdateData(data.toys);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchData();
+    }, [id]);
     const {
         register,
         handleSubmit,

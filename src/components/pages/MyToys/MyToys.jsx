@@ -134,7 +134,7 @@ const MyToys = () => {
                                     <td className="text-xl font-bold">${toy?.price}</td>
                                     <td className="truncate line-clamp-10 max-w-[150px] ">{toy?.detailDescription}</td>
                                     <th>
-                                        <label htmlFor="my-modal-5" type="button" className="btn btn-ghost btn-md" onClick={() => handleEdit(toy)}>
+                                        <label htmlFor="my-modal-5" type="button" className="btn btn-ghost btn-md" onClick={() => handleEdit(toy._id)}>
                                             <BiEdit className="text-3xl text-orange-500" />
                                         </label>
                                         <button type="button" className="btn btn-ghost btn-md" onClick={() => handleDelete(toy._id)}>
@@ -146,7 +146,7 @@ const MyToys = () => {
                     </tbody>
                 </table>
             </div>
-            <EditModal updateData={editData} handleUpdate={handleUpdate} />
+            <EditModal id={editData} handleUpdate={handleUpdate} />
         </div>
     );
 };
