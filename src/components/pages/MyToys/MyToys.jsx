@@ -15,6 +15,7 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../../../context/AuthProvider';
 import useTitleChange from '../../../hooks/useTitleChange';
 import EditModal from './EditModal';
+import SortByPrice from './SortByPrice';
 
 const MyToys = () => {
     useTitleChange('My-Toys');
@@ -81,6 +82,7 @@ const MyToys = () => {
     };
     return (
         <div>
+            <SortByPrice onSort="asc" />
             <div className="overflow-x-auto w-full   my-10">
                 <table className="table w-full text-center">
                     {/* head */}
