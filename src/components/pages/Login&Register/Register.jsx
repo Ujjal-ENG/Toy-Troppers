@@ -72,8 +72,10 @@ function Register() {
         <div className="grid grid-cols-1 md:grid-cols-2 my-container gap-7">
             <div className="min-h-screen shadow-xl  duration-200 transition-shadow ease-in-out  hover:shadow-2xl  flex justify-center items-center order-2 md:order-1">
                 <div className="max-w-xl w-full mx-auto">
-                    <div className="text-center font-bold text-gray-700 text-3xl mb-6">Sign up</div>
-                    <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <div data-aos="fade-up" className="text-center font-bold text-gray-700 text-3xl mb-6">
+                        Sign up
+                    </div>
+                    <form data-aos="fade-right" onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
                                 Name
@@ -175,7 +177,7 @@ function Register() {
                     </div>
                 </div>
             </div>
-            <div>
+            <div data-aos="fade-left">
                 <Lottie options={defaultOptions} height={700} width={400} />
             </div>
         </div>

@@ -78,7 +78,7 @@ export default function AddToyPage() {
                         <label htmlFor="rating" className="block font-medium mb-2">
                             Rating
                         </label>
-                        <input type="number" id="rating" {...register('rating')} className="input input-bordered input-primary w-full" required />
+                        <input type="text" id="rating" {...register('rating')} className="input input-bordered input-primary w-full" required />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="quantity" className="block font-medium mb-2">

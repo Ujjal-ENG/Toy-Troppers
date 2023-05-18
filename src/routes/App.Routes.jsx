@@ -30,7 +30,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/add-a-toys',
-                element: <AddAToys />
+                element: (
+                    <PrivateRoute>
+                        <AddAToys />
+                    </PrivateRoute>
+                )
             },
             {
                 path: '/login',
