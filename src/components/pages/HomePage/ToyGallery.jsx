@@ -9,7 +9,7 @@ const ToyGallery = () => {
     return (
         <div className="mb-14">
             <section className="text-gray-600 body-font">
-                <div className="container px-5 py-24 mx-auto flex flex-wrap">
+                <div className="container px-5 py-32 mx-auto flex flex-wrap">
                     <div
                         data-aos="fade-up"
                         data-aos-offset="100"

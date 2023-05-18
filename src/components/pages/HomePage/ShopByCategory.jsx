@@ -9,7 +9,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
+import { FiArrowRight } from 'react-icons/fi';
 import ReactStars from 'react-rating-stars-component';
+import { Link } from 'react-router-dom';
 
 const ShopByCategory = () => {
     const [datas, setData] = useState([]);
@@ -51,7 +53,7 @@ const ShopByCategory = () => {
     };
     console.log(datas);
     return (
-        <div className="w-full mx-auto max-w-7xl space-y-5">
+        <div data-aos="zoom-in-up" className="w-full mx-auto max-w-7xl space-y-5 my-14">
             <h1 className="text-4xl font-bold text-center py-4">Shop By Category</h1>
             <div className="tabs grid grid-cols-4 justify-items-center text-2xl font-bold">
                 {tabs.map((tab, i) => (
@@ -70,16 +72,14 @@ const ShopByCategory = () => {
                                         <img alt={el.name} className="object-cover object-center h-full w-full" src={el.pictureUrl} />
                                     </div>
                                     <h2 className="text-xl font-medium title-font text-gray-900 mt-5">{el.name}</h2>
-                                    <div className="flex justify-between items-center py-6">
+                                    <div className="flex justify-between items-center py-6 gap-3">
                                         <h3 className="text-primary font-bold text-xl">Price: ${el.price}</h3>
-                                        <ReactStars value={el.rating} size={28} isHalf emptyIcon={<BsStar />} halfIcon={<BsStarHalf />} fullIcon={<BsStarFill />} activeColor="#ffd700" />
+                                        <ReactStars value={el.rating} size={28} isHalf edit={false} emptyIcon={<BsStar />} halfIcon={<BsStarHalf />} fullIcon={<BsStarFill />} activeColor="#ffd700" />
                                     </div>
-                                    <a className="text-indigo-500 inline-flex items-center mt-3">
-                                        Learn More
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                            <path d="M5 12h14M12 5l7 7-7 7" />
-                                        </svg>
-                                    </a>
+                                    <Link to={`single-toy-details/:${el._id}`} className="btn btn-primary btn-block inline-flex gap-3 text-xl font-bold items-center mt-3">
+                                        View Details
+                                        <FiArrowRight className="text-3xl font-bold" />
+                                    </Link>
                                 </div>
                             ))}
                     </div>
