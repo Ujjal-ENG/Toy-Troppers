@@ -32,7 +32,7 @@ export default function AddToyPage() {
         data.availableQuantity = parseInt(data.availableQuantity, 10);
         try {
             const response = await axios.post(
-                'http://localhost:8080/add-toys',
+                'https://toy-troppers-server.vercel.app/add-toys',
                 { data },
                 {
                     headers: {

@@ -23,7 +23,7 @@ const AllToys = () => {
         setIsLoading(true);
         const fetchData = async () => {
             try {
-                const { data } = await axios.get(`http://localhost:8080/all-toys?page=${currentPage}&limit=${itemsPerPage}&searchQuery=${searchQuery}`);
+                const { data } = await axios.get(`https://toy-troppers-server.vercel.app/all-toys?page=${currentPage}&limit=${itemsPerPage}&searchQuery=${searchQuery}`);
                 if (data.success) {
                     setToys(data.toys);
                     setIsLoading(false);

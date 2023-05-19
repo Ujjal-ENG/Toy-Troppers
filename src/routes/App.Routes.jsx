@@ -51,7 +51,7 @@ export const router = createBrowserRouter([
             {
                 path: '/all-toys',
                 element: <AllToys />,
-                loader: async () => fetch('http://localhost:8080/toys-lengths')
+                loader: async () => fetch('https://toy-troppers-server.vercel.app/toys-lengths')
             },
             {
                 path: '/my-toys',

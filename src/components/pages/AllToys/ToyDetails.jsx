@@ -18,20 +18,24 @@ import useTitleChange from '../../../hooks/useTitleChange';
 const ToyDetails = () => {
     useTitleChange('Toy Details');
     const [toys, setToys] = useState([]);
+    const [loading, setIsLoading] = useState(false);
     const { id } = useParams();
     useEffect(() => {
         const fetchData = async () => {
+            setIsLoading(true);
             try {
-                const { data } = await axios.get(`http://localhost:8080/single-toys-details/${id}`, {
+                const { data } = await axios.get(`https://toy-troppers-server.vercel.app/single-toys-details/${id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
                 });
                 if (data.success) {
                     setToys(data.toys);
+                    setIsLoading(false);
                 }
             } catch (error) {
                 console.log(error);
+                setIsLoading(false);
             }
         };
         fetchData();
@@ -47,6 +51,13 @@ const ToyDetails = () => {
                 // eslint-disable-next-line comma-dangle
                 timer: 1500
             });
+    }
+    if (loading) {
+        return (
+            <div className="h-screen flex justify-center items-center">
+                <progress className="progress w-56" />
+            </div>
+        );
     }
     return (
         <div>

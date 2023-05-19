@@ -30,7 +30,7 @@ const MyToys = () => {
         const fetchData = async () => {
             setIsLoading(true);
             try {
-                const { data } = await axios.get(`http://localhost:8080/my-toys?sellerEmail=${userInfo?.email}&sortBy=${sortBy}`, {
+                const { data } = await axios.get(`https://toy-troppers-server.vercel.app/my-toys?sellerEmail=${userInfo && userInfo?.email}&sortBy=${sortBy}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
@@ -74,7 +74,7 @@ const MyToys = () => {
                 if (result.isConfirmed) {
                     // Delete the file
                     try {
-                        const response = await axios.delete(`http://localhost:8080/delete-toys-details?id=${id}`, {
+                        const response = await axios.delete(`https://toy-troppers-server.vercel.app/delete-toys-details?id=${id}`, {
                             headers: {
                                 Authorization: `Bearer ${localStorage.getItem('token')}`
                             }
@@ -109,7 +109,11 @@ const MyToys = () => {
     return (
         <div>
             <SortByPrice onSort="asc" handleSorts={handleSort} />
-            {toys.length === 0 && <h1 className="text-4xl font-bold text-center py-5">You did not have added any products..</h1>}
+            {toys.length === 0 && (
+                <h1 className="text-4xl font-bold text-center py-5">
+                    You did not have added any products or <span className="text-red-500">Please Reload Again!!!</span>{' '}
+                </h1>
+            )}
             {toys.length > 0 && (
                 <div className="overflow-x-auto w-full   my-10">
                     <table className="table w-full text-center">

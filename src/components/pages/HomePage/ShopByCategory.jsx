@@ -42,7 +42,7 @@ const ShopByCategory = () => {
     useEffect(() => {
         const fetChData = async () => {
             try {
-                const { data } = await axios.get(`http://localhost:8080/all-toys?category=${value}`);
+                const { data } = await axios.get(`https://toy-troppers-server.vercel.app/all-toys?category=${value}`);
                 if (data.success) {
                     setData(data.toys);
                 }
