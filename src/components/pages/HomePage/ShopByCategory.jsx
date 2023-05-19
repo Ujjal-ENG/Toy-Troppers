@@ -101,7 +101,7 @@ const ShopByCategory = () => {
                                                 <img alt={el.name} className="object-cover object-center h-full w-full" src={el.pictureUrl} />
                                             </LazyLoad>
                                         </div>
-                                        <h2 className="text-xl font-medium title-font text-gray-900 mt-5">{el.name}</h2>
+                                        <h2 className="text-xl  line-clamp-1 font-medium title-font text-gray-900 mt-5">{el.name}</h2>
                                         <div className="flex justify-between items-center py-6 gap-3">
                                             <h3 className="text-primary font-bold text-xl">Price: ${el.price}</h3>
                                             <ReactStars
