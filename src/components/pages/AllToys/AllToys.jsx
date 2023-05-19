@@ -5,17 +5,23 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { FiArrowRight } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import useTitleChange from '../../../hooks/useTitleChange';
 
 const AllToys = () => {
     useTitleChange('All-Toys');
+    const { results } = useLoaderData();
     const [toys, setToys] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
+    const [currentPage, setCurrentPage] = useState(0);
+    const [itemsPerPage, setItemsPerPage] = useState(19);
+    const totalPages = Math.ceil(results / itemsPerPage);
+    const pageNumbers = [...Array(totalPages).keys()];
+
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const { data } = await axios.get(`http://localhost:8080/all-toys?searchQuery=${searchQuery}`);
+                const { data } = await axios.get(`http://localhost:8080/all-toys?page=${currentPage}&limit=${itemsPerPage}&searchQuery=${searchQuery}`);
                 if (data.success) {
                     setToys(data.toys);
                 }
@@ -24,11 +30,17 @@ const AllToys = () => {
             }
         };
         fetchData();
-    }, [searchQuery]);
+    }, [searchQuery, currentPage, itemsPerPage]);
 
+    // page option selection
+    const options = [20, 40, 60, 80];
+    const handleOptionChange = (e) => {
+        setItemsPerPage(e.target.value);
+        setCurrentPage(0);
+    };
     return (
         <div className="py-10">
-            <div className="flex justify-end pb-8">
+            <div className="flex justify-center md:justify-end pb-8">
                 <div className="form-control w-80">
                     <span className="footer-title text-primary">Search the Product Using the Toy Name</span>
 
@@ -75,6 +87,20 @@ const AllToys = () => {
                             ))}
                     </tbody>
                 </table>
+            </div>
+            <div className="flex justify-center items-center gap-2">
+                <div className="btn-group my-5 ">
+                    {pageNumbers.map((number) => (
+                        <button key={number} type="button" className={`btn ${number === currentPage ? 'btn-active' : ''}`} onClick={() => setCurrentPage(number)}>
+                            {number + 1}
+                        </button>
+                    ))}
+                </div>
+                <select value={itemsPerPage} onChange={handleOptionChange} className="select select-bordered w-32">
+                    {options.map((option) => (
+                        <option key={option}>{option}</option>
+                    ))}
+                </select>
             </div>
         </div>
     );
