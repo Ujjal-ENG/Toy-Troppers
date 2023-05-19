@@ -23,8 +23,8 @@ const ToyGallery = () => {
                         <div className="flex flex-wrap w-1/2">
                             <div
                                 data-aos="flip-up"
-                                data-aos-offset="100"
-                                data-aos-delay="30"
+                                data-aos-offset="10"
+                                data-aos-delay="90"
                                 data-aos-duration="500"
                                 data-aos-easing="ease-in-out"
                                 data-aos-mirror="true"
@@ -39,8 +39,8 @@ const ToyGallery = () => {
                             </div>
                             <div
                                 data-aos="flip-down"
-                                data-aos-offset="100"
-                                data-aos-delay="30"
+                                data-aos-offset="10"
+                                data-aos-delay="90"
                                 data-aos-duration="500"
                                 data-aos-easing="ease-in-out"
                                 data-aos-mirror="true"
@@ -55,8 +55,8 @@ const ToyGallery = () => {
                             </div>
                             <div
                                 data-aos="zoom-in"
-                                data-aos-offset="100"
-                                data-aos-delay="30"
+                                data-aos-offset="10"
+                                data-aos-delay="90"
                                 data-aos-duration="500"
                                 data-aos-easing="ease-in-out"
                                 data-aos-mirror="true"
@@ -73,8 +73,8 @@ const ToyGallery = () => {
                         <div className="flex flex-wrap w-1/2">
                             <div
                                 data-aos="zoom-in-up"
-                                data-aos-offset="100"
-                                data-aos-delay="30"
+                                data-aos-offset="10"
+                                data-aos-delay="90"
                                 data-aos-duration="500"
                                 data-aos-easing="ease-in-out"
                                 data-aos-mirror="true"
@@ -89,8 +89,8 @@ const ToyGallery = () => {
                             </div>
                             <div
                                 data-aos="zoom-in-down"
-                                data-aos-offset="100"
-                                data-aos-delay="30"
+                                data-aos-offset="10"
+                                data-aos-delay="90"
                                 data-aos-duration="500"
                                 data-aos-easing="ease-in-out"
                                 data-aos-mirror="true"
@@ -105,8 +105,8 @@ const ToyGallery = () => {
                             </div>
                             <div
                                 data-aos="zoom-in-right"
-                                data-aos-offset="100"
-                                data-aos-delay="30"
+                                data-aos-offset="10"
+                                data-aos-delay="90"
                                 data-aos-duration="500"
                                 data-aos-easing="ease-in-out"
                                 data-aos-mirror="true"

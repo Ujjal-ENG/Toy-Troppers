@@ -1,15 +1,12 @@
 import AOS from 'aos';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Outlet, ScrollRestoration } from 'react-router-dom';
 import Footer from './components/layouts/shared/Footer';
 import Navbar from './components/layouts/shared/Navbar';
 import AuthProvider from './context/AuthProvider';
 
 const App = () => {
-    useEffect(() => {
-        AOS.init();
-        AOS.refresh();
-    });
+    AOS.init();
 
     return (
         <AuthProvider>
