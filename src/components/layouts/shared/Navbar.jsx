@@ -38,6 +38,13 @@ const Navbar = () => {
 
     const navItems = (
         <div className="flex flex-col md:flex-row justify-evenly items-center gap-8 text-2xl font-bold">
+            {userInfo && (
+                <div className="avatar">
+                    <div className="w-14 rounded-full">
+                        <img src="https://images.pexels.com/photos/16249368/pexels-photo-16249368.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="avatar" />
+                    </div>
+                </div>
+            )}
             <NavLink to="/">Home</NavLink>
             <NavLink to="/all-toys">All Toys</NavLink>
             {userInfo && (
@@ -73,14 +80,14 @@ const Navbar = () => {
             </div>
             <div className="navbar-end space-x-3">
                 {userInfo && (
-                    <div className="avatar">
+                    <div className="avatar hidden md:block">
                         <div className="w-14 rounded-full">
                             <img src="https://images.pexels.com/photos/16249368/pexels-photo-16249368.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="avatar" />
                         </div>
                     </div>
                 )}
                 {userInfo ? (
-                    <button type="button" className="btn btn-active" onClick={() => logOutUser()}>
+                    <button type="button" className="btn btn-active btn-sm md:btn-md" onClick={() => logOutUser()}>
                         LogOut
                     </button>
                 ) : (

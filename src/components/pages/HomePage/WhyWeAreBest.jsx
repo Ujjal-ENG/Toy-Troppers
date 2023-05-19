@@ -87,14 +87,11 @@ const WhyWeAreBest = () => {
                     </div>
                     <a
                         data-aos="fade-up"
-                        data-aos-mirror="true"
-                        data-aos-once="false"
-                        data-aos-anchor-placement="top-center"
                         href="https://www.google.com/maps?q=New+York+City"
                         target="_blank"
                         rel="noopener noreferrer"
                         type="button"
-                        className="flex w-72 mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                        className="flex md:w-72 w-full mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
                         Visit Our Office Location
                     </a>
                 </div>
