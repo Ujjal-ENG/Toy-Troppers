@@ -2,6 +2,7 @@
 /* eslint-disable comma-dangle */
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
+import ErrorPage from '../ErrorPage';
 import AddAToys from '../components/pages/AddATOys/AddAToys';
 import AllToys from '../components/pages/AllToys/AllToys';
 import ToyDetails from '../components/pages/AllToys/ToyDetails';
@@ -17,6 +18,7 @@ export const router = createBrowserRouter([
     {
         path: '/',
         element: <App />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: '/',
