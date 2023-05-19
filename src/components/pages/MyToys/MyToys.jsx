@@ -25,8 +25,10 @@ const MyToys = () => {
     const [editData, setEditData] = useState(null);
     const [update, setUpdate] = useState(false);
     const [sortBy, setSortBy] = useState('');
+    const [loading, setIsLoading] = useState(false);
     useEffect(() => {
         const fetchData = async () => {
+            setIsLoading(true);
             try {
                 const { data } = await axios.get(`http://localhost:8080/my-toys?sellerEmail=${userInfo?.email}&sortBy=${sortBy}`, {
                     headers: {
@@ -35,9 +37,11 @@ const MyToys = () => {
                 });
                 if (data.success) {
                     setToys(data.toys);
+                    setIsLoading(false);
                 }
             } catch (error) {
                 console.log(error);
+                setIsLoading(false);
             }
         };
         fetchData();
@@ -93,7 +97,15 @@ const MyToys = () => {
     const handleSort = (data) => {
         setSortBy(data);
     };
+    if (loading) {
+        return (
+            <div className="h-screen flex justify-center items-center">
+                <progress className="progress w-56" />
+            </div>
+        );
+    }
     let count = 1;
+
     return (
         <div>
             <SortByPrice onSort="asc" handleSorts={handleSort} />

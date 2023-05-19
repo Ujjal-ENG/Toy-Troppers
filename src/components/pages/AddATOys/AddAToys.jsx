@@ -31,7 +31,15 @@ export default function AddToyPage() {
         data.rating = parseFloat(data.rating);
         data.availableQuantity = parseInt(data.availableQuantity, 10);
         try {
-            const response = await axios.post('http://localhost:8080/add-toys', { data });
+            const response = await axios.post(
+                'http://localhost:8080/add-toys',
+                { data },
+                {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('token')}`
+                    }
+                }
+            );
             if (response?.data?.success) {
                 Swal.fire({
                     position: 'top-end',

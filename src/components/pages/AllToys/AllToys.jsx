@@ -14,18 +14,22 @@ const AllToys = () => {
     const [toys, setToys] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [currentPage, setCurrentPage] = useState(0);
-    const [itemsPerPage, setItemsPerPage] = useState(19);
+    const [itemsPerPage, setItemsPerPage] = useState(20);
     const totalPages = Math.ceil(results / itemsPerPage);
     const pageNumbers = [...Array(totalPages).keys()];
+    const [loading, setIsLoading] = useState(false);
 
     useEffect(() => {
+        setIsLoading(true);
         const fetchData = async () => {
             try {
                 const { data } = await axios.get(`http://localhost:8080/all-toys?page=${currentPage}&limit=${itemsPerPage}&searchQuery=${searchQuery}`);
                 if (data.success) {
                     setToys(data.toys);
+                    setIsLoading(false);
                 }
             } catch (error) {
+                setIsLoading(false);
                 console.log(error);
             }
         };
@@ -38,6 +42,13 @@ const AllToys = () => {
         setItemsPerPage(e.target.value);
         setCurrentPage(0);
     };
+    if (loading) {
+        return (
+            <div className="h-screen flex justify-center items-center">
+                <progress className="progress w-56" />
+            </div>
+        );
+    }
     return (
         <div className="py-10">
             <div className="flex justify-center md:justify-end pb-8">
