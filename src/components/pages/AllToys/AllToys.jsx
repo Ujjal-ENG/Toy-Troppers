@@ -13,6 +13,18 @@ const AllToys = () => {
 
     return (
         <div className="py-10">
+            <div className="flex justify-end pb-8">
+                <div className="form-control w-80">
+                    <span className="footer-title text-primary">Search the Product Using the Toy Name</span>
+
+                    <div className="relative">
+                        <input type="text" placeholder="Iron Man" className="input input-bordered w-full pr-16" />
+                        <button type="button" className="btn btn-primary absolute top-0 right-0 rounded-l-none">
+                            Search Here
+                        </button>
+                    </div>
+                </div>
+            </div>
             <div className="overflow-x-auto">
                 <table className="table table-compact w-full text-center">
                     <thead>
