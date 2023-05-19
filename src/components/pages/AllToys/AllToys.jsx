@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react/jsx-indent-props */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable operator-linebreak */
@@ -19,9 +21,10 @@ const AllToys = () => {
     const pageNumbers = [...Array(totalPages).keys()];
     const [loading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
+    const [clicked, setCliked] = useState(false);
     useEffect(() => {
-        setIsLoading(true);
         const fetchData = async () => {
+            setIsLoading(true);
             try {
                 const { data } = await axios.get(`https://toy-troppers-server.vercel.app/all-toys?page=${currentPage}&limit=${itemsPerPage}&searchQuery=${searchQuery}`);
                 if (data.success) {
@@ -35,13 +38,19 @@ const AllToys = () => {
             }
         };
         fetchData();
-    }, [searchQuery, currentPage, itemsPerPage]);
+    }, [clicked, currentPage, itemsPerPage]);
 
     // page option selection
     const options = [20, 40, 60, 80];
     const handleOptionChange = (e) => {
         setItemsPerPage(e.target.value);
         setCurrentPage(0);
+    };
+
+    // search
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setCliked((ps) => !ps);
     };
     if (loading || isError) {
         return (
@@ -53,7 +62,7 @@ const AllToys = () => {
 
     return (
         <div className="py-10">
-            {toys.length === 0 && <span className="text-red-500">Error occurred while fetching data.</span>}
+            {toys.length === 0 && <span className="text-red-500 text-5xl text-center font-bold tracking-widest">Error occurred while fetching data.</span>}
             {toys.length > 0 && (
                 <>
                     {' '}
@@ -61,12 +70,18 @@ const AllToys = () => {
                         <div className="form-control w-80">
                             <span className="footer-title text-primary">Search the Product Using the Toy Name</span>
 
-                            <div className="relative">
-                                <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Iron Man" className="input input-bordered w-full pr-16" />
-                                <button type="button" className="btn btn-primary absolute top-0 right-0 rounded-l-none">
+                            <form onSubmit={handleSubmit} className="relative">
+                                <input
+                                    type="text"
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    placeholder="Iron Man"
+                                    className="input input-bordered input-primary w-full pr-16"
+                                />
+                                <button type="submit" className="btn btn-primary absolute top-0 right-0 rounded-l-none">
                                     Search Here
                                 </button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                     <div className="overflow-x-auto">

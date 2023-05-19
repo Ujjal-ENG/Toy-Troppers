@@ -8,7 +8,7 @@ const ContactUs = () => {
     return (
         <div
             data-aos="fade-up"
-            data-aos-offset="100"
+            data-aos-offset="-500"
             data-aos-delay="30"
             data-aos-duration="500"
             data-aos-easing="ease-in-out"

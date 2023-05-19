@@ -9,7 +9,7 @@ const ToyGallery = () => {
     return (
         <div className="mb-14">
             <section className="text-gray-600 body-font">
-                <div className="container px-5 py-32 mx-auto flex flex-wrap">
+                <div className="container px-5 pb-32 mx-auto flex flex-wrap">
                     <div data-aos="fade-up" data-aos-once="false" data-aos-anchor-placement="top-center" className="flex w-full my-20 flex-wrap">
                         <h1 className="sm:text-3xl text-2xl title-font text-primary font-bold lg:w-1/3 lg:mb-0 mb-4">Master Cleanse Toy | Troppers Gallery</h1>
                         <p className="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">
@@ -23,8 +23,8 @@ const ToyGallery = () => {
                         <div className="flex flex-wrap w-1/2">
                             <div
                                 data-aos="flip-up"
-                                data-aos-offset="10"
-                                data-aos-delay="90"
+                                data-aos-offset="-500"
+                                data-aos-delay="30"
                                 data-aos-duration="500"
                                 data-aos-easing="ease-in-out"
                                 data-aos-mirror="true"
@@ -39,8 +39,8 @@ const ToyGallery = () => {
                             </div>
                             <div
                                 data-aos="flip-down"
-                                data-aos-offset="10"
-                                data-aos-delay="90"
+                                data-aos-offset="-500"
+                                data-aos-delay="30"
                                 data-aos-duration="500"
                                 data-aos-easing="ease-in-out"
                                 data-aos-mirror="true"
@@ -55,8 +55,8 @@ const ToyGallery = () => {
                             </div>
                             <div
                                 data-aos="zoom-in"
-                                data-aos-offset="10"
-                                data-aos-delay="90"
+                                data-aos-offset="-500"
+                                data-aos-delay="30"
                                 data-aos-duration="500"
                                 data-aos-easing="ease-in-out"
                                 data-aos-mirror="true"
@@ -73,8 +73,8 @@ const ToyGallery = () => {
                         <div className="flex flex-wrap w-1/2">
                             <div
                                 data-aos="zoom-in-up"
-                                data-aos-offset="10"
-                                data-aos-delay="90"
+                                data-aos-offset="-500"
+                                data-aos-delay="30"
                                 data-aos-duration="500"
                                 data-aos-easing="ease-in-out"
                                 data-aos-mirror="true"
@@ -89,8 +89,8 @@ const ToyGallery = () => {
                             </div>
                             <div
                                 data-aos="zoom-in-down"
-                                data-aos-offset="10"
-                                data-aos-delay="90"
+                                data-aos-offset="-500"
+                                data-aos-delay="30"
                                 data-aos-duration="500"
                                 data-aos-easing="ease-in-out"
                                 data-aos-mirror="true"
@@ -105,8 +105,8 @@ const ToyGallery = () => {
                             </div>
                             <div
                                 data-aos="zoom-in-right"
-                                data-aos-offset="10"
-                                data-aos-delay="90"
+                                data-aos-offset="-500"
+                                data-aos-delay="30"
                                 data-aos-duration="500"
                                 data-aos-easing="ease-in-out"
                                 data-aos-mirror="true"
