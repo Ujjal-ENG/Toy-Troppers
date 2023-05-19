@@ -2,6 +2,7 @@ import React from 'react';
 import useTitleChange from '../../../hooks/useTitleChange';
 import BannerSlider from './BannerSlider';
 import CollectAll from './CollectAll';
+import Geek from './Geek';
 import ShopByCategory from './ShopByCategory';
 import StatsSection from './StatsSection';
 import ToyGallery from './ToyGallery';
@@ -17,6 +18,7 @@ const Home = () => {
             <StatsSection />
             <ToyGallery />
             <WhyWeAreBest />
+            <Geek />
         </div>
     );
 };
