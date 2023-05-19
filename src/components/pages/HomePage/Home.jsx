@@ -2,6 +2,7 @@ import React from 'react';
 import useTitleChange from '../../../hooks/useTitleChange';
 import BannerSlider from './BannerSlider';
 import CollectAll from './CollectAll';
+import ContactUs from './ContactUs';
 import Geek from './Geek';
 import ShopByCategory from './ShopByCategory';
 import StatsSection from './StatsSection';
@@ -19,6 +20,7 @@ const Home = () => {
             <ToyGallery />
             <WhyWeAreBest />
             <Geek />
+            <ContactUs />
         </div>
     );
 };

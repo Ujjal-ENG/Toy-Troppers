@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable react/jsx-indent-props */
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -6,7 +7,16 @@ import { Link } from 'react-router-dom';
 
 const Geek = () => {
     return (
-        <div data-aos="fade-up" className="grid grid-cols-3 justify-items-center">
+        <div
+            data-aos="fade-up"
+            data-aos-offset="10"
+            data-aos-delay="30"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"
+            className="grid grid-cols-3 justify-items-center">
             <div className="col-span-1 mt-32 space-y-5">
                 <h1 className="text-4xl font-bold uppercase tracking-wider">Upcoming Events</h1>
                 <p className="mb-4">When you create a Toy|Troppers account, receive invitations to exclusive IRL and online events.</p>
