@@ -56,29 +56,10 @@ const StatsSection = () => {
 
     return (
         <>
-            <h1
-                data-aos="fade-up"
-                data-aos-offset="100"
-                data-aos-delay="30"
-                data-aos-duration="500"
-                data-aos-easing="ease-in-out"
-                data-aos-mirror="true"
-                data-aos-once="false"
-                data-aos-anchor-placement="top-center"
-                className="text-4xl font-bold tracking-wider text-center  pt-12">
+            <h1 data-aos="fade-up" className="text-4xl font-bold tracking-wider text-center  pt-12">
                 Stats
             </h1>
-            <div
-                data-aos="zoom-in"
-                data-aos-offset="100"
-                data-aos-delay="30"
-                data-aos-duration="500"
-                data-aos-easing="ease-in-out"
-                data-aos-mirror="true"
-                data-aos-once="false"
-                data-aos-anchor-placement="top-center"
-                ref={sectionRef}
-                className="flex justify-center pt-9 items-center">
+            <div data-aos="zoom-in" ref={sectionRef} className="flex justify-center pt-9 items-center">
                 <div className="stats shadow max-w-5xl w-full">
                     <div className="stat place-items-center">
                         <div className="stat-title">Visitors</div>

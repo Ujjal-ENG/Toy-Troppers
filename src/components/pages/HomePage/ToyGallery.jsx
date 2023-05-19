@@ -43,7 +43,7 @@ const ToyGallery = () => {
                                 <img
                                     alt="gallery"
                                     className="w-full object-cover h-full object-center block"
-                                    src="https://cdn.popcultcha.com.au/media/catalog/product/cache/207e23213cf636ccdef205098cf3c8a3/t/h/the_transformers-_the_movie_1986_-_dinobot_snarl_studio_series_leader_class_8.5_action_figure_1.png"
+                                    src="https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/904926/thor-sixth-scale-figure_marvel_silo.png"
                                 />
                             </div>
                             <div
@@ -56,7 +56,11 @@ const ToyGallery = () => {
                                 data-aos-once="false"
                                 data-aos-anchor-placement="top-center"
                                 className="md:p-2 p-1 w-1/2">
-                                <img alt="gallery" className="w-full object-cover h-full object-center block" src="https://www.madzombie.com.au/assets/full/HSF6879.png?20221109133853" />
+                                <img
+                                    alt="gallery"
+                                    className="w-full object-cover h-full object-center block"
+                                    src="https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/904311/captain-marvel-deluxe-version_marvel_silo.png"
+                                />
                             </div>
                             <div
                                 data-aos="zoom-in"
@@ -71,7 +75,7 @@ const ToyGallery = () => {
                                 <img
                                     alt="gallery"
                                     className="w-full h-full object-cover object-center block"
-                                    src="https://preview.redd.it/the-heavy-infantry-paz-vizsla-figure-may-be-the-best-v0-2027dp58fro81.jpg?width=640&crop=smart&auto=webp&s=5fa71771db3e4fb154eaa347382b038ead3dd496"
+                                    src="https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/904929/captain-america-2012-version_marvel_gallery_63dd4f2d36110.jpg"
                                 />
                             </div>
                         </div>
@@ -89,7 +93,7 @@ const ToyGallery = () => {
                                 <img
                                     alt="gallery"
                                     className="w-full h-full object-cover object-center block"
-                                    src="https://i5.walmartimages.com/asr/5ee129f3-d0a0-4bba-9622-0702ffcc10d0.2f7cc00f45ee3197dd8184583b90df6a.png?odnHeight=580&odnWidth=580&odnBg=FFFFFF"
+                                    src="https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/908289/the-mandalorian-and-grogu-deluxe-version_star-wars_gallery_63f79e5b31aca.jpg"
                                 />
                             </div>
                             <div
