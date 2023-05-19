@@ -59,7 +59,7 @@ const StatsSection = () => {
             <h1 data-aos="fade-up" className="text-4xl font-bold tracking-wider text-center  pt-12">
                 Stats
             </h1>
-            <div data-aos="zoom-in" ref={sectionRef} className="flex justify-center pt-9 items-center">
+            <div data-aos="zoom-in" ref={sectionRef} className="flex justify-center py-9 items-center">
                 <div className="stats shadow max-w-5xl w-full">
                     <div className="stat place-items-center">
                         <div className="stat-title">Visitors</div>

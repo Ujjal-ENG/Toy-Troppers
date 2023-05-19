@@ -10,16 +10,7 @@ const ToyGallery = () => {
         <div className="mb-14">
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-32 mx-auto flex flex-wrap">
-                    <div
-                        data-aos="fade-up"
-                        data-aos-offset="100"
-                        data-aos-delay="30"
-                        data-aos-duration="500"
-                        data-aos-easing="ease-in-out"
-                        data-aos-mirror="true"
-                        data-aos-once="false"
-                        data-aos-anchor-placement="top-center"
-                        className="flex w-full mb-20 flex-wrap">
+                    <div data-aos="fade-up" data-aos-once="false" data-aos-anchor-placement="top-center" className="flex w-full my-20 flex-wrap">
                         <h1 className="sm:text-3xl text-2xl title-font text-primary font-bold lg:w-1/3 lg:mb-0 mb-4">Master Cleanse Toy | Troppers Gallery</h1>
                         <p className="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">
                             Welcome to our <span className="md:text-xl text-sm font-bold text-orange-600">Toy-Troppers Gallery!</span> Discover a captivating collection of toy photos that showcase the

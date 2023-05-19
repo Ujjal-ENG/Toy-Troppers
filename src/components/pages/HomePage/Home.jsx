@@ -1,6 +1,7 @@
 import React from 'react';
 import useTitleChange from '../../../hooks/useTitleChange';
 import BannerSlider from './BannerSlider';
+import CollectAll from './CollectAll';
 import ShopByCategory from './ShopByCategory';
 import StatsSection from './StatsSection';
 import ToyGallery from './ToyGallery';
@@ -12,6 +13,7 @@ const Home = () => {
         <div>
             <BannerSlider />
             <ShopByCategory />
+            <CollectAll />
             <StatsSection />
             <ToyGallery />
             <WhyWeAreBest />
