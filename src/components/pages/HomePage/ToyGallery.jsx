@@ -30,17 +30,44 @@ const ToyGallery = () => {
                     </div>
                     <div className="flex flex-wrap md:-m-2 -m-1">
                         <div className="flex flex-wrap w-1/2">
-                            <div data-aos="flip-up" className="md:p-2 p-1 w-1/2">
+                            <div
+                                data-aos="flip-up"
+                                data-aos-offset="100"
+                                data-aos-delay="30"
+                                data-aos-duration="500"
+                                data-aos-easing="ease-in-out"
+                                data-aos-mirror="true"
+                                data-aos-once="false"
+                                data-aos-anchor-placement="top-center"
+                                className="md:p-2 p-1 w-1/2">
                                 <img
                                     alt="gallery"
                                     className="w-full object-cover h-full object-center block"
                                     src="https://cdn.popcultcha.com.au/media/catalog/product/cache/207e23213cf636ccdef205098cf3c8a3/t/h/the_transformers-_the_movie_1986_-_dinobot_snarl_studio_series_leader_class_8.5_action_figure_1.png"
                                 />
                             </div>
-                            <div data-aos="flip-down" className="md:p-2 p-1 w-1/2">
+                            <div
+                                data-aos="flip-down"
+                                data-aos-offset="100"
+                                data-aos-delay="30"
+                                data-aos-duration="500"
+                                data-aos-easing="ease-in-out"
+                                data-aos-mirror="true"
+                                data-aos-once="false"
+                                data-aos-anchor-placement="top-center"
+                                className="md:p-2 p-1 w-1/2">
                                 <img alt="gallery" className="w-full object-cover h-full object-center block" src="https://www.madzombie.com.au/assets/full/HSF6879.png?20221109133853" />
                             </div>
-                            <div data-aos="zoom-in" className="md:p-2 p-1 w-full">
+                            <div
+                                data-aos="zoom-in"
+                                data-aos-offset="100"
+                                data-aos-delay="30"
+                                data-aos-duration="500"
+                                data-aos-easing="ease-in-out"
+                                data-aos-mirror="true"
+                                data-aos-once="false"
+                                data-aos-anchor-placement="top-center"
+                                className="md:p-2 p-1 w-full">
                                 <img
                                     alt="gallery"
                                     className="w-full h-full object-cover object-center block"
@@ -49,21 +76,48 @@ const ToyGallery = () => {
                             </div>
                         </div>
                         <div className="flex flex-wrap w-1/2">
-                            <div data-aos="zoom-in-up" className="md:p-2 p-1 w-full">
+                            <div
+                                data-aos="zoom-in-up"
+                                data-aos-offset="100"
+                                data-aos-delay="30"
+                                data-aos-duration="500"
+                                data-aos-easing="ease-in-out"
+                                data-aos-mirror="true"
+                                data-aos-once="false"
+                                data-aos-anchor-placement="top-center"
+                                className="md:p-2 p-1 w-full">
                                 <img
                                     alt="gallery"
                                     className="w-full h-full object-cover object-center block"
                                     src="https://i5.walmartimages.com/asr/5ee129f3-d0a0-4bba-9622-0702ffcc10d0.2f7cc00f45ee3197dd8184583b90df6a.png?odnHeight=580&odnWidth=580&odnBg=FFFFFF"
                                 />
                             </div>
-                            <div data-aos="zoom-in-down" className="md:p-2 p-1 w-1/2">
+                            <div
+                                data-aos="zoom-in-down"
+                                data-aos-offset="100"
+                                data-aos-delay="30"
+                                data-aos-duration="500"
+                                data-aos-easing="ease-in-out"
+                                data-aos-mirror="true"
+                                data-aos-once="false"
+                                data-aos-anchor-placement="top-center"
+                                className="md:p-2 p-1 w-1/2">
                                 <img
                                     alt="gallery"
                                     className="w-full object-cover h-full object-center block"
                                     src="https://static.gamesmen.com.au/media/catalog/product/cache/43c1b9e48526c06c9c8010675100b71d/l/e/lego-marvel-avengers-movie-4--thanos-mech-armor_prod.jpg"
                                 />
                             </div>
-                            <div data-aos="zoom-in-right" className="md:p-2 p-1 w-1/2">
+                            <div
+                                data-aos="zoom-in-right"
+                                data-aos-offset="100"
+                                data-aos-delay="30"
+                                data-aos-duration="500"
+                                data-aos-easing="ease-in-out"
+                                data-aos-mirror="true"
+                                data-aos-once="false"
+                                data-aos-anchor-placement="top-center"
+                                className="md:p-2 p-1 w-1/2">
                                 <img alt="gallery" className="w-full object-cover h-full object-center block" src="https://shreepng.com/img/Inside/SuperheroAndVillain/Thanos/villain%20thanos.png" />
                             </div>
                         </div>
