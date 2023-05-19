@@ -60,7 +60,7 @@ const ShopByCategory = () => {
     return (
         <div data-aos="zoom-in-up" className="w-full mx-auto max-w-7xl space-y-5 my-14">
             <h1 className="text-4xl font-bold text-center py-4">Shop By Category</h1>
-            <div className="tabs grid grid-cols-4 justify-items-center text-2xl font-bold">
+            <div className="tabs grid grid-cols-1 md:grid-cols-4  justify-items-center text-2xl font-bold">
                 {tabs.map((tab, i) => (
                     <button key={i} id={tab.id} value={tab.tabTitle} disabled={currentTab === `${tab.id}`} onClick={handleTabClick}>
                         {tab.tabTitle}

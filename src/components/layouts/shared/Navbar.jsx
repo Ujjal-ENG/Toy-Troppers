@@ -39,7 +39,7 @@ const Navbar = () => {
     const navItems = (
         <div className="flex flex-col md:flex-row justify-evenly items-center gap-8 text-2xl font-bold">
             {userInfo && (
-                <div className="avatar">
+                <div className="avatar md:hidden block">
                     <div className="w-14 rounded-full">
                         <img src="https://images.pexels.com/photos/16249368/pexels-photo-16249368.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="avatar" />
                     </div>
@@ -58,8 +58,8 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar mx-auto relative z-30">
-            <div className="navbar-start">
+        <div className={`z-50 relative flex justify-between items-center duration-200 transition-all ${isScrolled ? 'sticky top-0 bg-white py-3   ease-in' : ' ease-out'}`}>
+            <div className="flex justify-center items-center">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -75,10 +75,10 @@ const Navbar = () => {
                     <h3 className="text-primary text-xl font-bold">Toy|Troppers</h3>
                 </div>
             </div>
-            <div className="navbar-center hidden lg:flex">
+            <div className=" hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">{navItems}</ul>
             </div>
-            <div className="navbar-end space-x-3">
+            <div className="space-x-3 flex items-center">
                 {userInfo && (
                     <div className="avatar hidden md:block">
                         <div className="w-14 rounded-full">
