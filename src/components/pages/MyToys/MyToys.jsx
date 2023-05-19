@@ -84,6 +84,7 @@ const MyToys = () => {
     const handleSort = (data) => {
         setSortBy(data);
     };
+    let count = 1;
     return (
         <div>
             <SortByPrice onSort="asc" handleSorts={handleSort} />
@@ -103,9 +104,9 @@ const MyToys = () => {
                     <tbody>
                         {/* row 1 */}
                         {toys &&
-                            toys.map((toy, idx) => (
+                            toys.map((toy) => (
                                 <tr key={toy?._id}>
-                                    <th>{idx + 1}</th>
+                                    <th>{count++}</th>
                                     <td>
                                         <div className="flex items-center justify-center space-x-3">
                                             <div className="avatar">

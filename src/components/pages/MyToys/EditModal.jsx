@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-unused-vars */
 /* eslint-disable comma-dangle */
@@ -15,24 +16,44 @@ const EditModal = ({ id, handleUpdate }) => {
     const { userInfo } = useContext(AuthContext);
     const [loading, setIsLoading] = useState(false);
     const [updateData, setUpdateData] = useState({});
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const { data } = await axios.get(`http://localhost:8080/single-toys-details/${id}`);
-                if (data.success) {
-                    setUpdateData(data.toys);
-                }
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        fetchData();
-    }, [id]);
     const {
         register,
         handleSubmit,
-        formState: { errors }
+        formState: { errors },
+        setValue,
+        reset
     } = useForm();
+
+    useEffect(() => {
+        setIsLoading(loading);
+        const fetchData = async () => {
+            try {
+                const { data } = await axios.get(`http://localhost:8080/single-toys-details/${id && id}`);
+                if (data.success) {
+                    setIsLoading(false);
+                    setUpdateData(data.toys);
+                    // Set default values using setValue after data has been fetched
+                    setValue('pictureUrl', data.toys.pictureUrl);
+                    setValue('name', data.toys.name);
+                    setValue('sellerName', data.toys.sellerName);
+                    setValue('subCategory', data.toys.subCategory);
+                    setValue('price', data.toys.price);
+                    setValue('rating', data.toys.rating);
+                    setValue('quantity', data.toys.availableQuantity);
+                    setValue('description', data.toys.detailDescription);
+                }
+            } catch (error) {
+                if (error.response && error.response.status === 404) {
+                    console.log('ID not found.');
+                    // Handle the error when ID is not found
+                } else {
+                    console.log('An error occurred while fetching data:', error);
+                    // Handle other types of errors
+                }
+            }
+        };
+        fetchData();
+    }, [id, setValue]);
 
     const onSubmit = async (data) => {
         setIsLoading(true);
@@ -52,7 +73,15 @@ const EditModal = ({ id, handleUpdate }) => {
             setIsLoading(false);
             console.log(error);
         }
+        reset(); // Reset the form after submission
     };
+    if (loading) {
+        return (
+            <div className="h-screen flex justify-center items-center">
+                <progress className="progress w-56" />
+            </div>
+        );
+    }
 
     return (
         <div>
@@ -133,7 +162,7 @@ const EditModal = ({ id, handleUpdate }) => {
                                     {...register('price', { required: true })}
                                     className="input input-bordered input-primary w-full"
                                     required
-                                    defaultValue={updateData?.price}
+                                    defaultValue={updateData && updateData?.price}
                                 />
                             </div>
 

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-indent-props */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable operator-linebreak */
 /* eslint-disable no-underscore-dangle */
@@ -12,6 +13,7 @@ import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiArrowRight } from 'react-icons/fi';
 import ReactStars from 'react-rating-stars-component';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const ShopByCategory = () => {
     const [datas, setData] = useState([]);
@@ -51,7 +53,6 @@ const ShopByCategory = () => {
         setCurrentTab(e.target.id);
         setValue(e.target.value);
     };
-    console.log(datas);
     return (
         <div data-aos="zoom-in-up" className="w-full mx-auto max-w-7xl space-y-5 my-14">
             <h1 className="text-4xl font-bold text-center py-4">Shop By Category</h1>
@@ -63,27 +64,45 @@ const ShopByCategory = () => {
                 ))}
             </div>
             <div className="py-5">
-                {tabs.map((tab, i) => (
-                    <div key={i} className="grid grid-cols-3 w-full gap-7">
-                        {currentTab === `${tab.id}` &&
-                            datas.map((el) => (
-                                <div key={el._id} className="p-4 sm:mb-0 mb-6">
-                                    <div className="rounded-lg h-64 overflow-hidden">
-                                        <img alt={el.name} className="object-cover object-center h-full w-full" src={el.pictureUrl} />
-                                    </div>
-                                    <h2 className="text-xl font-medium title-font text-gray-900 mt-5">{el.name}</h2>
-                                    <div className="flex justify-between items-center py-6 gap-3">
-                                        <h3 className="text-primary font-bold text-xl">Price: ${el.price}</h3>
-                                        <ReactStars value={el.rating} size={28} isHalf edit={false} emptyIcon={<BsStar />} halfIcon={<BsStarHalf />} fullIcon={<BsStarFill />} activeColor="#ffd700" />
-                                    </div>
-                                    <Link to={`single-toy-details/${el._id}`} state={el} className="btn btn-primary btn-block inline-flex gap-3 text-xl font-bold items-center mt-3">
-                                        View Details
-                                        <FiArrowRight className="text-3xl font-bold" />
-                                    </Link>
-                                </div>
-                            ))}
-                    </div>
-                ))}
+                <Swiper
+                    autoplay={{
+                        delay: 2000, // Delay between slides in milliseconds
+                        disableOnInteraction: false // Allow user interaction to pause autoplay
+                    }}
+                    watchSlidesProgress
+                    slidesPerView={3}
+                    className="max-w-6xl w-full text-center">
+                    {tabs.map((tab, i) => (
+                        <div key={i} className="grid grid-cols-3 w-full gap-7">
+                            {currentTab === `${tab.id}` &&
+                                datas.map((el) => (
+                                    <SwiperSlide key={el._id} className="p-4 sm:mb-0 mb-6">
+                                        <div className="rounded-lg h-64 overflow-hidden">
+                                            <img alt={el.name} className="object-cover object-center h-full w-full" src={el.pictureUrl} />
+                                        </div>
+                                        <h2 className="text-xl font-medium title-font text-gray-900 mt-5">{el.name}</h2>
+                                        <div className="flex justify-between items-center py-6 gap-3">
+                                            <h3 className="text-primary font-bold text-xl">Price: ${el.price}</h3>
+                                            <ReactStars
+                                                value={parseFloat(el.rating)}
+                                                size={28}
+                                                isHalf
+                                                edit={false}
+                                                emptyIcon={<BsStar />}
+                                                halfIcon={<BsStarHalf />}
+                                                fullIcon={<BsStarFill />}
+                                                activeColor="#ffd700"
+                                            />
+                                        </div>
+                                        <Link to={`single-toy-details/${el._id}`} state={el} className="btn btn-primary btn-block inline-flex gap-3 text-xl font-bold items-center mt-3">
+                                            View Details
+                                            <FiArrowRight className="text-3xl font-bold" />
+                                        </Link>
+                                    </SwiperSlide>
+                                ))}
+                        </div>
+                    ))}
+                </Swiper>
             </div>
         </div>
     );
