@@ -22,14 +22,14 @@ export default function AddToyPage() {
         register,
         handleSubmit,
         formState: { errors },
-        resetField
+        reset
     } = useForm();
     console.log(errors);
     const onSubmit = async (data) => {
         setIsLoading(true);
         data.price = parseInt(data.price, 10);
         data.rating = parseFloat(data.rating);
-        data.quantity = parseInt(data.quantity, 10);
+        data.availableQuantity = parseInt(data.availableQuantity, 10);
         try {
             const response = await axios.post('http://localhost:8080/add-toys', { data });
             if (response?.data?.success) {
@@ -46,7 +46,7 @@ export default function AddToyPage() {
             setIsLoading(false);
             console.log(error);
         }
-        resetField();
+        reset();
     };
 
     const defaultOptions = {
@@ -119,10 +119,10 @@ export default function AddToyPage() {
                         <input type="number" id="rating" {...register('rating', { required: true })} step="0.01" min={1} max={5} className="input input-bordered input-primary w-full" required />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="quantity" className="block font-medium mb-2">
+                        <label htmlFor="availableQuantity" className="block font-medium mb-2">
                             Available Quantity
                         </label>
-                        <input type="number" id="availableQuantity" {...register('quantity', { required: true })} className="input input-bordered input-primary w-full" required />
+                        <input type="number" id="availableQuantity" {...register('availableQuantity', { required: true })} className="input input-bordered input-primary w-full" required />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="description" className="block font-medium mb-2">

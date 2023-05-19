@@ -60,7 +60,7 @@ const EditModal = ({ id, handleUpdate }) => {
         setIsLoading(true);
         data.price = parseInt(data.price, 10);
         data.rating = parseFloat(data.rating);
-        data.quantity = parseInt(data.quantity, 10);
+        data.availableQuantity = parseInt(data.availableQuantity, 10);
         try {
             const response = await axios.patch(`http://localhost:8080/update-toys-details?id=${updateData._id}`, { data });
             if (response.data.success) {
@@ -188,12 +188,12 @@ const EditModal = ({ id, handleUpdate }) => {
                             </div>
 
                             <div className="mb-4">
-                                <label htmlFor="quantity" className="block font-medium mb-2">
+                                <label htmlFor="availableQuantity" className="block font-medium mb-2">
                                     Available Quantity
                                 </label>
                                 <input
                                     type="number"
-                                    id="quantity"
+                                    id="availableQuantity"
                                     {...register('availableQuantity', { required: true })}
                                     className="input input-bordered input-primary w-full"
                                     required
