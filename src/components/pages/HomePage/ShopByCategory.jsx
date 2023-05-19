@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable react/jsx-indent-props */
 /* eslint-disable react/jsx-one-expression-per-line */
@@ -73,7 +74,7 @@ const ShopByCategory = () => {
                         clickable: true
                     }}
                     breakpoints={{
-                        640: {
+                        0: {
                             slidesPerView: 1,
                             spaceBetween: 20
                         },
@@ -88,7 +89,6 @@ const ShopByCategory = () => {
                     }}
                     modules={[Pagination]}
                     watchSlidesProgress
-                    slidesPerView={3}
                     className="max-w-6xl w-full text-center">
                     {tabs.map((tab, i) => (
                         <div key={i} className="grid grid-cols-3 w-full gap-7 py-3">
