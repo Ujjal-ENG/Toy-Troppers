@@ -18,7 +18,7 @@ const AllToys = () => {
     const totalPages = Math.ceil(results / itemsPerPage);
     const pageNumbers = [...Array(totalPages).keys()];
     const [loading, setIsLoading] = useState(false);
-
+    const [isError, setIsError] = useState(false);
     useEffect(() => {
         setIsLoading(true);
         const fetchData = async () => {
@@ -31,6 +31,7 @@ const AllToys = () => {
             } catch (error) {
                 setIsLoading(false);
                 console.log(error);
+                setIsError(true);
             }
         };
         fetchData();
@@ -42,13 +43,14 @@ const AllToys = () => {
         setItemsPerPage(e.target.value);
         setCurrentPage(0);
     };
-    if (loading) {
+    if (loading || isError) {
         return (
             <div className="h-screen flex justify-center items-center">
-                <progress className="progress w-56" />
+                {isError ? <span className="text-red-500">Error occurred while fetching data.</span> : <progress className="progress w-56" />}
             </div>
         );
     }
+
     return (
         <div className="py-10">
             <div className="flex justify-center md:justify-end pb-8">
