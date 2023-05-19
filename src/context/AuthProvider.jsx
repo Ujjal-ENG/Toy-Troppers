@@ -16,9 +16,11 @@ import {
     updateProfile
 } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
+import Lottie from 'react-lottie';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.css';
+import animationData from '../assets/json/loading2.json';
 import app from '../config/firebase';
 
 export const AuthContext = createContext(null);
@@ -146,10 +148,19 @@ function AuthProvider({ children }) {
         return () => unSubscriber();
     }, []);
 
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        }
+    };
+
     if (loading) {
         return (
             <div className="h-screen flex justify-center items-center">
-                <progress className="progress w-56" />
+                <Lottie options={defaultOptions} height={700} width={600} />
             </div>
         );
     }
