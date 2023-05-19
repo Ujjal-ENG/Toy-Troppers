@@ -48,8 +48,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/all-toys',
-                element: <AllToys />,
-                loader: async () => fetch('http://localhost:8080/all-toys')
+                element: <AllToys />
             },
             {
                 path: '/my-toys',

@@ -2,14 +2,29 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable operator-linebreak */
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { FiArrowRight } from 'react-icons/fi';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import useTitleChange from '../../../hooks/useTitleChange';
 
 const AllToys = () => {
     useTitleChange('All-Toys');
-    const { toys } = useLoaderData();
+    const [toys, setToys] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const { data } = await axios.get(`http://localhost:8080/all-toys?searchQuery=${searchQuery}`);
+                if (data.success) {
+                    setToys(data.toys);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchData();
+    }, [searchQuery]);
 
     return (
         <div className="py-10">
@@ -18,7 +33,7 @@ const AllToys = () => {
                     <span className="footer-title text-primary">Search the Product Using the Toy Name</span>
 
                     <div className="relative">
-                        <input type="text" placeholder="Iron Man" className="input input-bordered w-full pr-16" />
+                        <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Iron Man" className="input input-bordered w-full pr-16" />
                         <button type="button" className="btn btn-primary absolute top-0 right-0 rounded-l-none">
                             Search Here
                         </button>
