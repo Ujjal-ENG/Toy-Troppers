@@ -11,8 +11,10 @@ import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import ReactStars from 'react-rating-stars-component';
 import { Link, useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useTitleChange from '../../../hooks/useTitleChange';
 
 const ToyDetails = () => {
+    useTitleChange('Toy Details');
     const { toys } = useLoaderData();
     const [isFavorite, setIsFavorite] = useState(false);
     {

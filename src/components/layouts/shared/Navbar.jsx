@@ -72,6 +72,13 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1">{navItems}</ul>
             </div>
             <div className="navbar-end space-x-3">
+                {userInfo && (
+                    <div className="avatar">
+                        <div className="w-14 rounded-full">
+                            <img src="https://images.pexels.com/photos/16249368/pexels-photo-16249368.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="avatar" />
+                        </div>
+                    </div>
+                )}
                 {userInfo ? (
                     <button type="button" className="btn btn-active" onClick={() => logOutUser()}>
                         LogOut
@@ -80,13 +87,6 @@ const Navbar = () => {
                     <Link to="/login" type="button" className="btn btn-primary font-bold btn-sm md:btn-md">
                         Login
                     </Link>
-                )}
-                {userInfo && (
-                    <div className="avatar">
-                        <div className="w-14 rounded-full">
-                            <img src="https://images.pexels.com/photos/16249368/pexels-photo-16249368.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="avatar" />
-                        </div>
-                    </div>
                 )}
             </div>
         </div>

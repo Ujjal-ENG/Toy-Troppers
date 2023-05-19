@@ -8,6 +8,7 @@ import AuthProvider from './context/AuthProvider';
 const App = () => {
     useEffect(() => {
         AOS.init();
+        AOS.refresh();
     });
 
     return (
