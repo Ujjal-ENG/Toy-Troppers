@@ -123,20 +123,6 @@ function AuthProvider({ children }) {
         }
     };
 
-    const updateUserProfile = async (name, photo) => {
-        await updateProfile(userInfo, {
-            displayName: name,
-            photoURL: photo
-        });
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'User name and picture is Updated Successfully!!!',
-            showConfirmButton: false,
-            timer: 1500
-        });
-    };
-
     const resetPassword = async (email) => {
         await sendPasswordResetEmail(auth, email);
         Swal.fire({
@@ -175,7 +161,6 @@ function AuthProvider({ children }) {
         signInUser,
         logOutUser,
         singInGoogle,
-        updateUserProfile,
         resetPassword
     };
 
