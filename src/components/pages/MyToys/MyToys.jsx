@@ -28,7 +28,11 @@ const MyToys = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const { data } = await axios.get(`http://localhost:8080/my-toys?sellerEmail=${userInfo?.email}&sortBy=${sortBy}`);
+                const { data } = await axios.get(`http://localhost:8080/my-toys?sellerEmail=${userInfo?.email}&sortBy=${sortBy}`, {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('token')}`
+                    }
+                });
                 if (data.success) {
                     setToys(data.toys);
                 }
@@ -66,7 +70,11 @@ const MyToys = () => {
                 if (result.isConfirmed) {
                     // Delete the file
                     try {
-                        const response = await axios.delete(`http://localhost:8080/delete-toys-details?id=${id}`);
+                        const response = await axios.delete(`http://localhost:8080/delete-toys-details?id=${id}`, {
+                            headers: {
+                                Authorization: `Bearer ${localStorage.getItem('token')}`
+                            }
+                        });
                         if (response.data.success) {
                             swalWithBootstrapButtons.fire('Deleted!', 'Your file has been deleted.', 'success');
                             setUpdate(!update);

@@ -28,8 +28,7 @@ export const router = createBrowserRouter([
                     <PrivateRoute>
                         <SingleToyDetails />
                     </PrivateRoute>
-                ),
-                loader: async ({ params }) => fetch(`http://localhost:8080/single-toys-details/${params.id}`)
+                )
             },
             {
                 path: 'all-toys/toy-details/:id',
@@ -37,8 +36,7 @@ export const router = createBrowserRouter([
                     <PrivateRoute>
                         <ToyDetails />
                     </PrivateRoute>
-                ),
-                loader: async ({ params }) => fetch(`http://localhost:8080/single-toys-details/${params.id}`)
+                )
             },
             {
                 path: '/add-a-toys',

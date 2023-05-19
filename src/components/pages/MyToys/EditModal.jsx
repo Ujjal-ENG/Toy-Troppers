@@ -29,7 +29,11 @@ const EditModal = ({ id, handleUpdate }) => {
         setIsLoading(loading);
         const fetchData = async () => {
             try {
-                const { data } = await axios.get(`http://localhost:8080/single-toys-details/${id && id}`);
+                const { data } = await axios.get(`http://localhost:8080/single-toys-details/${id && id}`, {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('token')}`
+                    }
+                });
                 if (data.success) {
                     setIsLoading(false);
                     setUpdateData(data.toys);
@@ -62,7 +66,15 @@ const EditModal = ({ id, handleUpdate }) => {
         data.rating = parseFloat(data.rating);
         data.availableQuantity = parseInt(data.availableQuantity, 10);
         try {
-            const response = await axios.patch(`http://localhost:8080/update-toys-details?id=${updateData._id}`, { data });
+            const response = await axios.patch(
+                `http://localhost:8080/update-toys-details?id=${updateData._id}`,
+                { data },
+                {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('token')}`
+                    }
+                }
+            );
             if (response.data.success) {
                 setIsLoading(false);
                 handleUpdate(true);

@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable no-lone-blocks */
 /* eslint-disable no-unused-expressions */
@@ -6,16 +7,35 @@
 /* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable max-len */
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import ReactStars from 'react-rating-stars-component';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useTitleChange from '../../../hooks/useTitleChange';
 
 const SingleToyDetails = () => {
     useTitleChange('Toy Details');
-    const { toys } = useLoaderData();
+    const [toys, setToys] = useState([]);
+    const { id } = useParams();
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const { data } = await axios.get(`http://localhost:8080/single-toys-details/${id}`, {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('token')}`
+                    }
+                });
+                if (data.success) {
+                    setToys(data.toys);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchData();
+    }, [id]);
     const [isFavorite, setIsFavorite] = useState(false);
     {
         isFavorite &&

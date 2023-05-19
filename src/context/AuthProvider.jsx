@@ -3,6 +3,7 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 /* eslint-disable comma-dangle */
 /* eslint-disable react/jsx-indent */
+import axios from 'axios';
 import {
     GoogleAuthProvider,
     createUserWithEmailAndPassword,
@@ -18,7 +19,6 @@ import React, { createContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.css';
-
 import app from '../config/firebase';
 
 export const AuthContext = createContext(null);
@@ -147,7 +147,13 @@ function AuthProvider({ children }) {
         navigate('/login');
     };
     useEffect(() => {
-        const unSubscriber = onAuthStateChanged(auth, (user) => {
+        const unSubscriber = onAuthStateChanged(auth, async (user) => {
+            if (user && user.email) {
+                const { data } = await axios.post('http://localhost:8080/jwt', { email: user.email });
+                localStorage.setItem('token', data.token);
+            } else {
+                localStorage.removeItem('token');
+            }
             setUserInfo(user);
             setPrivateLoad(false);
         });
