@@ -38,6 +38,7 @@ function Blogs() {
 
     return (
         <div className="my-container">
+            {loader?.blogsData[0]?.questions === 0 && <span className="text-red-500">Error occurred while fetching data.</span>}
             <div className="flex justify-between items-center">
                 <h1 className="hover-stroke text-3xl md:text-5xl font-bold" data-text="Blogs">
                     Blogs
@@ -49,7 +50,6 @@ function Blogs() {
                     Download as PDF
                 </button>
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-5">{loader && loader?.blogsData[0]?.questions.map((blog, idx) => <BlogCard key={idx} data={blog} />)}</div>
         </div>
     );

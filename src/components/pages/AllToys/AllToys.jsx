@@ -53,7 +53,7 @@ const AllToys = () => {
 
     return (
         <div className="py-10">
-            {isError && <span className="text-red-500">Error occurred while fetching data.</span>}
+            {toys.length === 0 && <span className="text-red-500">Error occurred while fetching data.</span>}
             {toys.length > 0 && (
                 <>
                     {' '}
