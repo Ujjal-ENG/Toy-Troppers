@@ -1,6 +1,7 @@
 import React from 'react';
 import useTitleChange from '../../../hooks/useTitleChange';
 import BannerSlider from './BannerSlider';
+import Brands from './Brands';
 import CollectAll from './CollectAll';
 import ContactUs from './ContactUs';
 import Geek from './Geek';
@@ -14,6 +15,7 @@ const Home = () => {
     return (
         <div>
             <BannerSlider />
+            <Brands />
             <ShopByCategory />
             <CollectAll />
             <StatsSection />
