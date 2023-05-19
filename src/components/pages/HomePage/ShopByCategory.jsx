@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable react/jsx-indent-props */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable operator-linebreak */
@@ -13,6 +14,7 @@ import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiArrowRight } from 'react-icons/fi';
 import ReactStars from 'react-rating-stars-component';
 import { Link } from 'react-router-dom';
+import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const ShopByCategory = () => {
@@ -65,15 +67,31 @@ const ShopByCategory = () => {
             </div>
             <div className="py-5">
                 <Swiper
-                    autoplay={{
-                        delay: 2000, // Delay between slides in milliseconds
-                        disableOnInteraction: false // Allow user interaction to pause autoplay
+                    slidesPerView={1}
+                    spaceBetween={10}
+                    pagination={{
+                        clickable: true
                     }}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 1,
+                            spaceBetween: 20
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 40
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 50
+                        }
+                    }}
+                    modules={[Pagination]}
                     watchSlidesProgress
                     slidesPerView={3}
                     className="max-w-6xl w-full text-center">
                     {tabs.map((tab, i) => (
-                        <div key={i} className="grid grid-cols-3 w-full gap-7">
+                        <div key={i} className="grid grid-cols-3 w-full gap-7 py-3">
                             {currentTab === `${tab.id}` &&
                                 datas.map((el) => (
                                     <SwiperSlide key={el._id} className="p-4 sm:mb-0 mb-6">
