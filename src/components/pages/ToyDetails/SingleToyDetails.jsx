@@ -37,7 +37,16 @@ const SingleToyDetails = () => {
                             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{toys?.name}</h1>
                             <div className="flex mb-4">
                                 <span className="flex justify-center items-center">
-                                    <ReactStars value={toys?.rating} size={28} isHalf edit={false} emptyIcon={<BsStar />} halfIcon={<BsStarHalf />} fullIcon={<BsStarFill />} activeColor="#ffd700" />
+                                    <ReactStars
+                                        value={parseFloat(toys?.rating)}
+                                        size={28}
+                                        isHalf
+                                        edit={false}
+                                        emptyIcon={<BsStar />}
+                                        halfIcon={<BsStarHalf />}
+                                        fullIcon={<BsStarFill />}
+                                        activeColor="#ffd700"
+                                    />
                                     <span className="text-gray-600 ml-3">4 Reviews</span>
                                 </span>
 
