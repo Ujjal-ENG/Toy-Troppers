@@ -30,7 +30,7 @@ const BannerSlider = () => {
             spaceBetween={30}
             centeredSlides
             autoplay={{
-                delay: 3500,
+                delay: 5000,
                 disableOnInteraction: false
             }}
             pagination={{
@@ -44,7 +44,8 @@ const BannerSlider = () => {
                 <div
                     className="hero min-h-[80vh]"
                     style={{
-                        backgroundImage: 'url("https://img.freepik.com/premium-vector/gradient-winter-sale-illustration_52683-75554.jpg?w=1060")',
+                        backgroundImage:
+                            'url("https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/907068/optimus-prime_transformers_gallery_5f6e41ac47f89.jpg")',
                         borderRadius: 10,
                         objectFit: 'cover'
                     }}>
@@ -56,7 +57,7 @@ const BannerSlider = () => {
                     className="hero min-h-[80vh]"
                     style={{
                         backgroundImage:
-                            'url("https://ae01.alicdn.com/kf/HTB1azz.DASWBuNjSszdq6zeSpXay/6pcs-set-Marvel-Avengers-Infinity-War-Thanos-Ironman-Spiderman-Captain-American-Hulk-Black-Panther-PVC-Figure.jpg_Q90.jpg_.webp")',
+                            'url("https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/908284/hunter_star-wars_gallery_63d98284a4f3a.jpg")',
                         borderRadius: 10,
                         objectFit: 'cover'
                     }}>
@@ -67,19 +68,7 @@ const BannerSlider = () => {
                 <div
                     className="hero min-h-[80vh]"
                     style={{
-                        backgroundImage: 'url("https://m.media-amazon.com/images/I/410DjEeijwS.jpg")',
-                        borderRadius: 10,
-                        objectFit: 'cover'
-                    }}>
-                    <div className="hero-overlay bg-opacity-10" />
-                </div>
-            </SwiperSlide>
-            <SwiperSlide className=" border-2  rounded-lg">
-                <div
-                    className="hero min-h-[80vh]"
-                    style={{
-                        backgroundImage:
-                            'url("https://w7.pngwing.com/pngs/462/760/png-transparent-lego-star-wars-toy-monster-musume-lego-monster-fighters-nichijou-photography-cartoon-fictional-character.png")',
+                        backgroundImage: 'url("https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/912360/star-lord__gallery_646655cb44210.jpg")',
                         borderRadius: 10,
                         objectFit: 'cover'
                     }}>
@@ -91,7 +80,55 @@ const BannerSlider = () => {
                     className="hero min-h-[80vh]"
                     style={{
                         backgroundImage:
-                            'url("https://shop.hasbro.com/_next/image?url=https%3A%2F%2Fwww.hasbro.com%2Fcommon%2Fproductimages%2Fen_CA%2FFAF9A3BB99684973AD82740A15FD720F%2Fe4b2a5ad2eb010f0c7a1eb6d010e198b1e80a905.jpg&w=3840&q=75")',
+                            'url("https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/9073381/megatron_transformers_gallery_5fbc0d933f414.jpg")',
+                        borderRadius: 10,
+                        objectFit: 'cover'
+                    }}>
+                    <div className="hero-overlay bg-opacity-10" />
+                </div>
+            </SwiperSlide>
+            <SwiperSlide className=" border-2  rounded-lg">
+                <div
+                    className="hero min-h-[80vh]"
+                    style={{
+                        backgroundImage:
+                            'url("https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/907068/optimus-prime_transformers_gallery_5f6e41ad07ccd.jpg")',
+                        borderRadius: 10,
+                        objectFit: 'cover'
+                    }}>
+                    <div className="hero-overlay bg-opacity-10" />
+                </div>
+            </SwiperSlide>
+            <SwiperSlide className=" border-2  rounded-lg">
+                <div
+                    className="hero min-h-[80vh]"
+                    style={{
+                        backgroundImage:
+                            'url("https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/9073381/megatron_transformers_gallery_5fbc0d9203d68.jpg")',
+                        borderRadius: 10,
+                        objectFit: 'cover'
+                    }}>
+                    <div className="hero-overlay bg-opacity-10" />
+                </div>
+            </SwiperSlide>
+            <SwiperSlide className=" border-2  rounded-lg">
+                <div
+                    className="hero min-h-[80vh]"
+                    style={{
+                        backgroundImage:
+                            'url("https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/9073381/megatron_transformers_gallery_5fbc0d92d9ee6.jpg")',
+                        borderRadius: 10,
+                        objectFit: 'cover'
+                    }}>
+                    <div className="hero-overlay bg-opacity-10" />
+                </div>
+            </SwiperSlide>
+            <SwiperSlide className=" border-2  rounded-lg">
+                <div
+                    className="hero min-h-[80vh]"
+                    style={{
+                        backgroundImage:
+                            'url("https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/904926/thor-sixth-scale-figure_marvel_gallery_5da4aa638dc81.jpg")',
                         borderRadius: 10,
                         objectFit: 'cover'
                     }}>
