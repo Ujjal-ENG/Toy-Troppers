@@ -6,6 +6,7 @@ import ErrorPage from '../ErrorPage';
 import AddAToys from '../components/pages/AddATOys/AddAToys';
 import AllToys from '../components/pages/AllToys/AllToys';
 import ToyDetails from '../components/pages/AllToys/ToyDetails';
+import Blogs from '../components/pages/Blogs/Blogs';
 import Home from '../components/pages/HomePage/Home';
 import ForgotPassword from '../components/pages/Login&Register/ForgotPassword';
 import Login from '../components/pages/Login&Register/Login';
@@ -60,6 +61,11 @@ export const router = createBrowserRouter([
                         <MyToys />
                     </PrivateRoute>
                 )
+            },
+            {
+                path: '/blogs',
+                element: <Blogs />,
+                loader: async () => fetch('https://toy-troppers-server.vercel.app/blogs')
             },
             {
                 path: '/login',
