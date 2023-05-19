@@ -13,6 +13,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiArrowRight } from 'react-icons/fi';
+import LazyLoad from 'react-lazyload';
 import ReactStars from 'react-rating-stars-component';
 import { Link } from 'react-router-dom';
 import { Pagination } from 'swiper';
@@ -89,14 +90,16 @@ const ShopByCategory = () => {
                     }}
                     modules={[Pagination]}
                     watchSlidesProgress
-                    className="max-w-6xl w-full text-center">
+                    className="max-w-6xl w-full text-center mx-auto">
                     {tabs.map((tab, i) => (
                         <div key={i} className="grid grid-cols-3 w-full gap-7 py-3">
                             {currentTab === `${tab.id}` &&
                                 datas.map((el) => (
                                     <SwiperSlide key={el._id} className="p-4 sm:mb-0 mb-6">
                                         <div className="rounded-lg h-64 overflow-hidden">
-                                            <img alt={el.name} className="object-cover object-center h-full w-full" src={el.pictureUrl} />
+                                            <LazyLoad once>
+                                                <img alt={el.name} className="object-cover object-center h-full w-full" src={el.pictureUrl} />
+                                            </LazyLoad>
                                         </div>
                                         <h2 className="text-xl font-medium title-font text-gray-900 mt-5">{el.name}</h2>
                                         <div className="flex justify-between items-center py-6 gap-3">

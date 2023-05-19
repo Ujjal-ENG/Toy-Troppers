@@ -1,3 +1,4 @@
+/* eslint-disable radix */
 /* eslint-disable react/jsx-indent-props */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-unused-vars */
@@ -20,12 +21,15 @@ export default function AddToyPage() {
     const {
         register,
         handleSubmit,
-        formState: { errors }
+        formState: { errors },
+        resetField
     } = useForm();
     console.log(errors);
     const onSubmit = async (data) => {
         setIsLoading(true);
-        console.log(data);
+        data.price = parseInt(data.price, 10);
+        data.rating = parseFloat(data.rating);
+        data.quantity = parseInt(data.quantity, 10);
         try {
             const response = await axios.post('http://localhost:8080/add-toys', { data });
             if (response?.data?.success) {
@@ -42,6 +46,7 @@ export default function AddToyPage() {
             setIsLoading(false);
             console.log(error);
         }
+        resetField();
     };
 
     const defaultOptions = {
@@ -117,13 +122,13 @@ export default function AddToyPage() {
                         <label htmlFor="quantity" className="block font-medium mb-2">
                             Available Quantity
                         </label>
-                        <input type="number" id="quantity" {...register('quantity', { required: true })} className="input input-bordered input-primary w-full" required />
+                        <input type="number" id="availableQuantity" {...register('quantity', { required: true })} className="input input-bordered input-primary w-full" required />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="description" className="block font-medium mb-2">
                             Detail Description
                         </label>
-                        <textarea id="description" {...register('description', { required: true })} className="input input-bordered input-primary w-full" rows={10} />
+                        <textarea id="description" {...register('detailDescription', { required: true })} className="input input-bordered input-primary w-full" rows={10} />
                     </div>
                     <div className="mt-8">
                         {loading ? (

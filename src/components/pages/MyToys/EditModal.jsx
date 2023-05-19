@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-unused-vars */
@@ -39,7 +40,7 @@ const EditModal = ({ id, handleUpdate }) => {
                     setValue('subCategory', data.toys.subCategory);
                     setValue('price', data.toys.price);
                     setValue('rating', data.toys.rating);
-                    setValue('quantity', data.toys.availableQuantity);
+                    setValue('availableQuantity', data.toys.availableQuantity);
                     setValue('description', data.toys.detailDescription);
                 }
             } catch (error) {
@@ -57,6 +58,9 @@ const EditModal = ({ id, handleUpdate }) => {
 
     const onSubmit = async (data) => {
         setIsLoading(true);
+        data.price = parseInt(data.price, 10);
+        data.rating = parseFloat(data.rating);
+        data.quantity = parseInt(data.quantity, 10);
         try {
             const response = await axios.patch(`http://localhost:8080/update-toys-details?id=${updateData._id}`, { data });
             if (response.data.success) {
@@ -190,7 +194,7 @@ const EditModal = ({ id, handleUpdate }) => {
                                 <input
                                     type="number"
                                     id="quantity"
-                                    {...register('quantity', { required: true })}
+                                    {...register('availableQuantity', { required: true })}
                                     className="input input-bordered input-primary w-full"
                                     required
                                     defaultValue={updateData?.availableQuantity}
