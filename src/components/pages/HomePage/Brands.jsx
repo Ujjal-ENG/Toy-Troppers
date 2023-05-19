@@ -7,7 +7,7 @@ import LazyLoad from 'react-lazyload';
 const Brands = () => {
     return (
         <div>
-            <Marquee speed={50} className="text-2xl my-8 tracking-wide flex text-violet-600 font-bold">
+            <Marquee speed={50} className="text-2xl my-8 tracking-wide flex justify-center items-center text-violet-600 font-bold">
                 <div className="p-4 w-80">
                     <LazyLoad once>
                         <img
