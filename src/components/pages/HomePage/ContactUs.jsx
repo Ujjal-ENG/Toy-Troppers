@@ -15,31 +15,31 @@ const ContactUs = () => {
             data-aos-mirror="true"
             data-aos-once="false"
             data-aos-anchor-placement="top-center"
-            className="h-[250px] bg-black rounded-xl w-full my-32 flex justify-evenly items-center">
+            className="md:h-[250px] h-[280px] bg-black rounded-xl w-full my-32 flex md:flex-row items-start gap-3 md:gap-0  md:py-8 py-2 flex-col justify-start md:justify-evenly md:items-center md:px-0 px-3">
             <div>
                 <div className="flex items-center gap-4">
-                    <BsCalendar2DateFill className="text-5xl text-orange-600" />
+                    <BsCalendar2DateFill className="text-3xl md:text-5xl text-orange-600" />
                     <div>
                         <p className="text-white tracking-wider">We are open Monday-Friday</p>
-                        <h1 className="text-white text-3xl font-bold tracking-wider">7:00 am - 9:00 pm</h1>
+                        <h1 className="text-white text-xl md:text-3xl font-bold tracking-wider">7:00 am - 9:00 pm</h1>
                     </div>
                 </div>
             </div>
             <div>
                 <div className="flex items-center gap-4">
-                    <BsFillTelephoneXFill className="text-5xl text-orange-600" />
+                    <BsFillTelephoneXFill className="text-3xl md:text-5xl text-orange-600" />
                     <div>
                         <p className="text-white tracking-wider">Have a Question?</p>
-                        <h1 className="text-white text-3xl font-bold tracking-wider">+2546 251 2658</h1>
+                        <h1 className="text-white text-xl md:text-3xl font-bold tracking-wider">+2546 251 2658</h1>
                     </div>
                 </div>
             </div>
             <div>
                 <div className="flex items-center gap-4">
-                    <ImLocation className="text-5xl text-orange-600" />
+                    <ImLocation className="text-3xl md:text-5xl text-orange-600" />
                     <div>
                         <p className="text-white tracking-wider">Opinion or Complain? Our Address</p>
-                        <h1 className="text-white text-3xl font-bold tracking-wider">Liza Street, New York.</h1>
+                        <h1 className="text-white text-xl md:text-3xl font-bold tracking-wider">Liza Street, New York.</h1>
                     </div>
                 </div>
             </div>
