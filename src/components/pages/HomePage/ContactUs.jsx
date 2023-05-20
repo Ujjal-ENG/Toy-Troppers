@@ -8,9 +8,6 @@ const ContactUs = () => {
     return (
         <div
             data-aos="fade-up"
-            data-aos-easing="ease-in-out"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
             className="md:h-[250px] h-[280px] bg-black rounded-xl w-full my-32 flex md:flex-row items-start gap-3 md:gap-0  md:py-8 py-2 flex-col justify-start md:justify-evenly md:items-center md:px-0 px-3">
             <div>
                 <div className="flex items-center gap-4">

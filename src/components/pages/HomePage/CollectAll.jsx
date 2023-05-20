@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable react/jsx-indent-props */
 import React from 'react';
 import LazyLoad from 'react-lazyload';

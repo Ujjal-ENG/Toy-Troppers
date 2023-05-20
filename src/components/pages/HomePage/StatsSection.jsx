@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable react/jsx-indent-props */
 /* eslint-disable consistent-return */
@@ -56,10 +57,10 @@ const StatsSection = () => {
 
     return (
         <>
-            <h1 data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" className="text-4xl font-bold tracking-wider text-center pt-12">
+            <h1 data-aos="fade-up" className="text-4xl font-bold tracking-wider text-center pt-12">
                 Stats
             </h1>
-            <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" ref={sectionRef} className="flex  justify-center py-9 items-center">
+            <div data-aos="fade-up" ref={sectionRef} className="flex  justify-center py-9 items-center">
                 <div className="stats md:stats-horizontal stats-vertical shadow max-w-5xl w-full">
                     <div className="stat place-items-center">
                         <div className="stat-title">Visitors</div>

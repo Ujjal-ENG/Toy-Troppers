@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 
 const Geek = () => {
     return (
-        <div data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-once="false" data-aos-anchor-placement="top-center" className="grid grid-cols-1 md:grid-cols-3 justify-items-center">
-            <div className="col-span-1 mt-32 space-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center">
+            <div data-aos="fade-left" className="col-span-1 mt-32 space-y-5">
                 <h1 className="text-4xl font-bold uppercase tracking-wider">Upcoming Events</h1>
                 <p className="mb-4">When you create a Toy|Troppers account, receive invitations to exclusive IRL and online events.</p>
                 <Link to="/login" className="btn bg-orange-600 transition-all duration-150 ease-in-out hover:btn-primary btn-wide border-none">
@@ -43,7 +43,7 @@ const Geek = () => {
                     </div>
                 </div>
             </div>
-            <section className="text-gray-600 body-font col-span-2">
+            <section data-aos="fade-right" className="text-gray-600 body-font col-span-2">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-col">
                         <div className="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
