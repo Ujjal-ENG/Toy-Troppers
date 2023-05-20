@@ -10,32 +10,34 @@ const ToyGallery = () => {
         <div className="mb-14">
             <section className="text-gray-600 body-font">
                 <div className="container px-5 pb-32 mx-auto flex flex-wrap">
-                    <div data-aos="fade-up" className="flex w-full my-20 flex-wrap">
-                        <h1 className="sm:text-3xl text-2xl title-font text-primary font-bold lg:w-1/3 lg:mb-0 mb-4">Master Cleanse Toy | Troppers Gallery</h1>
-                        <p className="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">
+                    <div className="flex w-full my-20 flex-wrap">
+                        <h1 data-aos="fade-up" className="sm:text-3xl text-2xl title-font text-primary font-bold lg:w-1/3 lg:mb-0 mb-4">
+                            Master Cleanse Toy | Troppers Gallery
+                        </h1>
+                        <p data-aos="fade-up" className="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">
                             Welcome to our <span className="md:text-xl text-sm font-bold text-orange-600">Toy-Troppers Gallery!</span> Discover a captivating collection of toy photos that showcase the
                             magic and wonder of these playful companions. From action figures to superheroes, each photo tells a unique story, capturing the vibrant colors and intricate details of
                             these beloved toys. Let the photos inspire your imagination and relish in the joy they bring. Explore our Toy Gallery and embark on a visual journey filled with excitement,
                             creativity, and endless play possibilities.
                         </p>
                     </div>
-                    <div className="flex flex-wrap md:-m-2 -m-1">
+                    <div data-aos="zoom-in" className="flex flex-wrap md:-m-2 -m-1">
                         <div className="flex flex-wrap w-1/2">
-                            <div data-aos="fade-flip" className="md:p-2 p-1 w-1/2">
+                            <div className="md:p-2 p-1 w-1/2">
                                 <img
                                     alt="gallery"
                                     className="w-full object-cover h-full object-center block"
                                     src="https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/904926/thor-sixth-scale-figure_marvel_silo.png"
                                 />
                             </div>
-                            <div data-aos="fade-up" className="md:p-2 p-1 w-1/2">
+                            <div className="md:p-2 p-1 w-1/2">
                                 <img
                                     alt="gallery"
                                     className="w-full object-cover h-full object-center block"
                                     src="https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/904311/captain-marvel-deluxe-version_marvel_silo.png"
                                 />
                             </div>
-                            <div data-aos="zoom-in" className="md:p-2 p-1 w-full">
+                            <div className="md:p-2 p-1 w-full">
                                 <img
                                     alt="gallery"
                                     className="w-full h-full object-cover object-center block"
@@ -44,21 +46,21 @@ const ToyGallery = () => {
                             </div>
                         </div>
                         <div className="flex flex-wrap w-1/2">
-                            <div data-aos="zoom-in-up" className="md:p-2 p-1 w-full">
+                            <div className="md:p-2 p-1 w-full">
                                 <img
                                     alt="gallery"
                                     className="w-full h-full object-cover object-center block"
                                     src="https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/908289/the-mandalorian-and-grogu-deluxe-version_star-wars_gallery_63f79e5b31aca.jpg"
                                 />
                             </div>
-                            <div data-aos="zoom-in" className="md:p-2 p-1 w-1/2">
+                            <div className="md:p-2 p-1 w-1/2">
                                 <img
                                     alt="gallery"
                                     className="w-full object-cover h-full object-center block"
                                     src="https://static.gamesmen.com.au/media/catalog/product/cache/43c1b9e48526c06c9c8010675100b71d/l/e/lego-marvel-avengers-movie-4--thanos-mech-armor_prod.jpg"
                                 />
                             </div>
-                            <div data-aos="zoom-in-right" className="md:p-2 p-1 w-1/2">
+                            <div className="md:p-2 p-1 w-1/2">
                                 <img alt="gallery" className="w-full object-cover h-full object-center block" src="https://shreepng.com/img/Inside/SuperheroAndVillain/Thanos/villain%20thanos.png" />
                             </div>
                         </div>
