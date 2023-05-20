@@ -6,10 +6,10 @@ import LazyLoad from 'react-lazyload';
 const CollectAll = () => {
     return (
         <>
-            <h1 data-aos="fade-up" className="md:text-5xl text-3xl font-bold md:font-extrabold tracking-widest text-center py-9 uppercase">
+            <h1 data-aos="fade-left" className="md:text-5xl text-3xl font-bold md:font-extrabold tracking-widest text-center py-9 uppercase">
                 Collect It All
             </h1>
-            <div data-aos="zoom-in" className="grid grid-cols-1 my-8 justify-items-center gap-3 md:grid-cols-4">
+            <div data-aos="fade-up" className="grid grid-cols-1 my-8 justify-items-center gap-3 md:grid-cols-4">
                 <div className="lg:max-w-lg relative lg:w-full md:w-1/2 w-full mb-10 md:mb-0">
                     <LazyLoad once>
                         <img

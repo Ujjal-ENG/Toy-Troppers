@@ -7,7 +7,9 @@ import LazyLoad from 'react-lazyload';
 const Brands = () => {
     return (
         <div>
-            <h1 className="text-3xl uppercase md:text-6xl font-bold tracking-wider text-center py-5">Recommend for You</h1>
+            <h1 data-aos="fade-right" className="text-3xl uppercase md:text-6xl font-bold tracking-wider text-center py-5">
+                Recommend for You
+            </h1>
             <Marquee speed={50} className="text-2xl my-8 tracking-wide flex justify-center items-center text-violet-600 font-bold">
                 <div className="p-4 w-80">
                     <LazyLoad once>
