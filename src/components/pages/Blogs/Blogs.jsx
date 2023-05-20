@@ -12,6 +12,7 @@ import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitleChange from '../../../hooks/useTitleChange';
 import BlogCard from './BlogCard';
 
 function generatePDF(data) {
@@ -31,6 +32,7 @@ function generatePDF(data) {
 }
 
 function Blogs() {
+    useTitleChange('Blogs');
     const loader = useLoaderData();
     const downloadPDF = () => {
         generatePDF(loader?.blogsData[0]?.questions);
