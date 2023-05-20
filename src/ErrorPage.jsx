@@ -15,22 +15,14 @@ const ErrorPage = () => {
             preserveAspectRatio: 'xMidYMid slice'
         }
     };
+
     return (
-        <div>
-            <div
-                data-aos="zoom-in-up"
-                data-aos-offset="100"
-                data-aos-delay="30"
-                data-aos-duration="500"
-                data-aos-easing="ease-in-out"
-                data-aos-mirror="true"
-                data-aos-once="false"
-                data-aos-anchor-placement="top-center"
-                className="flex flex-col items-center lg:items-start mb-10 lg:mb-0">
-                <Lottie options={defaultOptions} height={700} width={600} />
+        <div className="flex flex-col items-center justify-center h-screen">
+            <div className="mb-10 lg:mb-0">
+                <Lottie options={defaultOptions} height={400} width={400} />
             </div>
-            <p className="text-xl font-bold tracking-wider text-center">Sorry, the page you are looking for does not exist.</p>
-            <div className="w-full flex justify-center my-6">
+            <p className="text-xl font-bold tracking-wider text-center mb-6">Sorry, the page you are looking for does not exist.</p>
+            <div className="flex justify-center">
                 <Link to="/" className="btn btn-wide font-bold text-xl btn-warning">
                     Go Back to Home
                 </Link>
