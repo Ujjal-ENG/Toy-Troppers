@@ -45,7 +45,7 @@ const Home = () => {
             {showPopup && (
                 <div className="fixed inset-0 flex items-center justify-center z-10">
                     <div className="modal-overlay absolute inset-0 bg-black opacity-50" />
-                    <div className="modal-container bg-white w-96 mx-auto rounded-lg shadow-lg z-20">
+                    <div className="modal-container bg-white w-1/2 md:w-96 mx-auto rounded-lg shadow-lg z-20">
                         <div className="modal-content p-4">
                             <h3 className="text-lg font-bold mb-4">Limited Time Offer!</h3>
                             <p className="mb-4">

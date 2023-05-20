@@ -198,12 +198,12 @@ const Footer = () => {
                                 <label htmlFor="footer-field" className="leading-7 text-sm text-white">
                                     NEWSLETTER
                                 </label>
-                                <div className="form-control w-72 md:w-80">
+                                <div className="form-control w-full md:w-80">
                                     <label className="label">
                                         <span className="label-text text-white">Enter your email address</span>
                                     </label>
                                     <div className="relative">
-                                        <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-0 md:pr-16" />
+                                        <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-0 md:pr-16 text-black font-bold" />
                                         <button type="button" className="btn btn-primary absolute top-0 right-0 rounded-l-none">
                                             Subscribe
                                         </button>
