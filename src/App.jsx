@@ -9,7 +9,6 @@ const App = () => {
         <AuthProvider>
             <div className="my-container">
                 <Navbar />
-
                 <Outlet />
                 <ScrollRestoration />
             </div>
