@@ -23,6 +23,7 @@ const ShopByCategory = () => {
     const [datas, setData] = useState([]);
     const [currentTab, setCurrentTab] = useState('1');
     const [value, setValue] = useState('Marvel');
+    const [loading, setLoading] = useState(false);
     const tabs = [
         {
             id: 1,
@@ -41,13 +42,16 @@ const ShopByCategory = () => {
     // get the toys
     useEffect(() => {
         const fetChData = async () => {
+            setLoading(true);
             try {
                 const { data } = await axios.get(`https://toy-troppers-server.vercel.app/all-toys?category=${value}`);
                 if (data.success) {
                     setData(data.toys);
+                    setLoading(false);
                 }
             } catch (error) {
                 console.log(error);
+                setLoading(false);
             }
         };
         fetChData();
@@ -57,8 +61,15 @@ const ShopByCategory = () => {
         setCurrentTab(e.target.id);
         setValue(e.target.value);
     };
+    if (loading) {
+        return (
+            <div className="h-screen flex justify-center items-center">
+                <progress className="progress w-56" />
+            </div>
+        );
+    }
     return (
-        <div data-aos="zoom-in-up" className="w-full mx-auto max-w-7xl space-y-5 my-14">
+        <div className="w-full mx-auto max-w-7xl space-y-5 my-14">
             <h1 className="text-4xl font-bold text-center py-4">Shop By Categories</h1>
             <div className="tabs grid grid-cols-1 md:grid-cols-4  justify-items-center text-2xl font-bold">
                 {tabs.map((tab, i) => (

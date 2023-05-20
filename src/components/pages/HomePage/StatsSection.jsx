@@ -56,20 +56,10 @@ const StatsSection = () => {
 
     return (
         <>
-            <h1 data-aos="fade-up" className="text-4xl font-bold tracking-wider text-center pt-12">
+            <h1 data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" className="text-4xl font-bold tracking-wider text-center pt-12">
                 Stats
             </h1>
-            <div
-                data-aos="zoom-in"
-                data-aos-offset="-500"
-                data-aos-delay="30"
-                data-aos-duration="500"
-                data-aos-easing="ease-in-out"
-                data-aos-mirror="true"
-                data-aos-once="false"
-                data-aos-anchor-placement="top-center"
-                ref={sectionRef}
-                className="flex  justify-center py-9 items-center">
+            <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" ref={sectionRef} className="flex  justify-center py-9 items-center">
                 <div className="stats md:stats-horizontal stats-vertical shadow max-w-5xl w-full">
                     <div className="stat place-items-center">
                         <div className="stat-title">Visitors</div>
