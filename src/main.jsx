@@ -18,5 +18,5 @@ AOS.init({
         return window.innerWidth < maxWidth;
     }
 });
-AOS.refresh();
+
 ReactDOM.createRoot(document.getElementById('root')).render(<RouterProvider router={router} />);
