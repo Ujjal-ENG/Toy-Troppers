@@ -1,7 +1,9 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/jsx-indent-props */
 import React from 'react';
+import Logo from '../../../assets/vite.svg';
 
 const Footer = () => {
     return (
@@ -193,7 +195,8 @@ const Footer = () => {
                 </div>
                 <div className="border-t border-gray-200">
                     <div className="container px-5 py-8 flex flex-wrap mx-auto items-center">
-                        <div className="flex md:flex-nowrap flex-wrap justify-center items-end md:justify-start">
+                        <div className="flex md:flex-nowrap flex-wrap items-center justify-center md:justify-start">
+                            <img src={Logo} alt="logo" className="" />
                             <div className="relative sm:mr-4 mr-2">
                                 <label htmlFor="footer-field" className="leading-7 text-sm text-white">
                                     NEWSLETTER
@@ -241,7 +244,7 @@ const Footer = () => {
                     <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
                         <p className="text-gray-500 text-sm text-center sm:text-left">
                             © 2023 Toy | Troppers —
-                            <a href="https://twitter.com/knyttneve" className="text-white ml-1" target="_blank" rel="noopener noreferrer">
+                            <a href="https://twitter.com/ujjal-roy7862" target="_blank" className="text-white ml-1" rel="noopener noreferrer">
                                 @Ujjal Kumar Roy
                             </a>
                         </p>
