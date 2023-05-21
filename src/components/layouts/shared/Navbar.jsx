@@ -30,8 +30,8 @@ const Navbar = () => {
     const navigation = useNavigation();
     if (navigation.state === 'loading') {
         return (
-            <div className="h-screen flex justify-center items-center">
-                <progress className="progress w-56" />
+            <div className="fixed inset-0 flex items-center justify-center z-50 bg-white">
+                <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-b-4 border-gray-900" />
             </div>
         );
     }

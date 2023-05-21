@@ -10,15 +10,7 @@ const WhyWeAreBest = () => {
         <div>
             <section className="text-gray-600 body-font">
                 <div className="container px-5 pb-14 mx-auto">
-                    <div
-                        data-aos="zoom-in-up"
-                        data-aos-delay="30"
-                        data-aos-duration="500"
-                        data-aos-easing="ease-in-out"
-                        data-aos-mirror="true"
-                        data-aos-once="true"
-                        data-aos-anchor-placement="top-center"
-                        className="text-center mb-20">
+                    <div data-aos="fade-up" className="text-center mb-20">
                         <h1 className="sm:text-3xl text-2xl font-bold title-font text-primary mb-4">Why We Are Best In The Market</h1>
                         <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
                             Toy-Troppers Baby toy shop used to be known as the A to Z Factory and has been in the body business for over 25 years. Currently we have 12 outlets in major city in USA,
@@ -28,15 +20,7 @@ const WhyWeAreBest = () => {
                             <div className="w-16 h-1 rounded-full bg-indigo-500 inline-flex" />
                         </div>
                     </div>
-                    <div
-                        data-aos="fade-up"
-                        data-aos-delay="30"
-                        data-aos-duration="500"
-                        data-aos-easing="ease-in-out"
-                        data-aos-mirror="true"
-                        data-aos-once="true"
-                        data-aos-anchor-placement="top-center"
-                        className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
+                    <div data-aos="fade-up" className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
                         <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
                             <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
                                 <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10" viewBox="0 0 24 24">
@@ -96,12 +80,6 @@ const WhyWeAreBest = () => {
                     </div>
                     <a
                         data-aos="fade-up"
-                        data-aos-delay="30"
-                        data-aos-duration="500"
-                        data-aos-easing="ease-in-out"
-                        data-aos-mirror="true"
-                        data-aos-once="true"
-                        data-aos-anchor-placement="top-center"
                         href="https://www.google.com/maps?q=New+York+City"
                         target="_blank"
                         rel="noopener noreferrer"

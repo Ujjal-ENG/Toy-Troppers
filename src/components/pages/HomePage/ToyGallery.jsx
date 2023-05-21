@@ -21,23 +21,23 @@ const ToyGallery = () => {
                             creativity, and endless play possibilities.
                         </p>
                     </div>
-                    <div data-aos="zoom-in" className="flex flex-wrap md:-m-2 -m-1">
+                    <div className="flex flex-wrap md:-m-2 -m-1">
                         <div className="flex flex-wrap w-1/2">
-                            <div className="md:p-2 p-1 w-1/2">
+                            <div data-aos="fade-up" className="md:p-2 p-1 w-1/2">
                                 <img
                                     alt="gallery"
                                     className="w-full object-cover h-full object-center block"
                                     src="https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/904926/thor-sixth-scale-figure_marvel_silo.png"
                                 />
                             </div>
-                            <div className="md:p-2 p-1 w-1/2">
+                            <div data-aos="fade-up" className="md:p-2 p-1 w-1/2">
                                 <img
                                     alt="gallery"
                                     className="w-full object-cover h-full object-center block"
                                     src="https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/904311/captain-marvel-deluxe-version_marvel_silo.png"
                                 />
                             </div>
-                            <div className="md:p-2 p-1 w-full">
+                            <div data-aos="fade-right" className="md:p-2 p-1 w-full">
                                 <img
                                     alt="gallery"
                                     className="w-full h-full object-cover object-center block"
@@ -45,7 +45,7 @@ const ToyGallery = () => {
                                 />
                             </div>
                         </div>
-                        <div className="flex flex-wrap w-1/2">
+                        <div data-aos="fade-left" className="flex flex-wrap w-1/2">
                             <div className="md:p-2 p-1 w-full">
                                 <img
                                     alt="gallery"
@@ -53,14 +53,14 @@ const ToyGallery = () => {
                                     src="https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/908289/the-mandalorian-and-grogu-deluxe-version_star-wars_gallery_63f79e5b31aca.jpg"
                                 />
                             </div>
-                            <div className="md:p-2 p-1 w-1/2">
+                            <div data-aos="zoom-in" className="md:p-2 p-1 w-1/2">
                                 <img
                                     alt="gallery"
                                     className="w-full object-cover h-full object-center block"
                                     src="https://static.gamesmen.com.au/media/catalog/product/cache/43c1b9e48526c06c9c8010675100b71d/l/e/lego-marvel-avengers-movie-4--thanos-mech-armor_prod.jpg"
                                 />
                             </div>
-                            <div className="md:p-2 p-1 w-1/2">
+                            <div data-aos="zoom-in" className="md:p-2 p-1 w-1/2">
                                 <img alt="gallery" className="w-full object-cover h-full object-center block" src="https://shreepng.com/img/Inside/SuperheroAndVillain/Thanos/villain%20thanos.png" />
                             </div>
                         </div>
