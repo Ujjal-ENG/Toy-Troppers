@@ -180,7 +180,7 @@ function Register() {
                 </div>
             </div>
             <div data-aos="fade-left">
-                <Lottie options={defaultOptions} height={700} width={400} />
+                <Lottie options={defaultOptions} className="w-full md:max-w-3xl" />
             </div>
         </div>
     );

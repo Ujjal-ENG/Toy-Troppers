@@ -157,7 +157,7 @@ function Login() {
                 data-aos-once="false"
                 data-aos-anchor-placement="top-center"
                 className="flex flex-col items-center lg:items-start mb-10 lg:mb-0">
-                <Lottie options={defaultOptions} height={700} width={600} />
+                <Lottie options={defaultOptions} className="w-full md:max-w-3xl" />
             </div>
         </div>
     );
