@@ -52,13 +52,6 @@ const AllToys = () => {
         e.preventDefault();
         setCliked((ps) => !ps);
     };
-    // if (loading || isError) {
-    //     return (
-    //         <div className="h-screen flex justify-center items-center">
-    //             {isError ? <span className="text-red-500">Error occurred while fetching data.</span> : <progress className="progress w-56" />}
-    //         </div>
-    //     );
-    // }
 
     return (
         <div className="py-10">
