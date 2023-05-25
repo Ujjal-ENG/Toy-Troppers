@@ -38,7 +38,7 @@ const AllToys = () => {
             }
         };
         fetchData();
-    }, [clicked, currentPage, itemsPerPage]);
+    }, [searchQuery, clicked, currentPage, itemsPerPage]);
 
     // page option selection
     const options = [20, 40, 60, 80];
@@ -52,13 +52,13 @@ const AllToys = () => {
         e.preventDefault();
         setCliked((ps) => !ps);
     };
-    if (loading || isError) {
-        return (
-            <div className="h-screen flex justify-center items-center">
-                {isError ? <span className="text-red-500">Error occurred while fetching data.</span> : <progress className="progress w-56" />}
-            </div>
-        );
-    }
+    // if (loading || isError) {
+    //     return (
+    //         <div className="h-screen flex justify-center items-center">
+    //             {isError ? <span className="text-red-500">Error occurred while fetching data.</span> : <progress className="progress w-56" />}
+    //         </div>
+    //     );
+    // }
 
     return (
         <div className="py-10">
@@ -98,26 +98,35 @@ const AllToys = () => {
                                     <th />
                                 </tr>
                             </thead>
-                            <tbody>
-                                {toys &&
-                                    toys.map((toy, idx) => (
-                                        <tr key={toy._id}>
-                                            <th>{idx + 1}</th>
-                                            <td>{toy.sellerName || 'Not Available'}</td>
-                                            <td>{toy.sellerEmail || 'Not Available'}</td>
-                                            <td>{toy.name || 'Not Available'}</td>
-                                            <td>{toy.subCategory || 'Not Available'}</td>
-                                            <td>${toy.price || 0}</td>
-                                            <td>{toy.availableQuantity || 0}</td>
-                                            <td>
-                                                <Link to={`toy-details/${toy._id}`} className="btn btn-primary  inline-flex gap-3 btn-sm text-sm font-bold items-center mt-3">
-                                                    View Details
-                                                    <FiArrowRight className="text-xl font-bold" />
-                                                </Link>
-                                            </td>
-                                        </tr>
-                                    ))}
-                            </tbody>
+                            {loading || isError ? (
+                                <>
+                                    <div className="flex justify-center items-center w-full mx-auto my-16">
+                                        {isError ? <span className="text-red-500">Error occurred while fetching data.</span> : <progress className="progress w-56" />}
+                                    </div>
+                                    :
+                                </>
+                            ) : (
+                                <tbody>
+                                    {toys &&
+                                        toys.map((toy, idx) => (
+                                            <tr key={toy._id}>
+                                                <th>{idx + 1}</th>
+                                                <td>{toy.sellerName || 'Not Available'}</td>
+                                                <td>{toy.sellerEmail || 'Not Available'}</td>
+                                                <td>{toy.name || 'Not Available'}</td>
+                                                <td>{toy.subCategory || 'Not Available'}</td>
+                                                <td>${toy.price || 0}</td>
+                                                <td>{toy.availableQuantity || 0}</td>
+                                                <td>
+                                                    <Link to={`toy-details/${toy._id}`} className="btn btn-primary  inline-flex gap-3 btn-sm text-sm font-bold items-center mt-3">
+                                                        View Details
+                                                        <FiArrowRight className="text-xl font-bold" />
+                                                    </Link>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                </tbody>
+                            )}
                         </table>
                     </div>
                     <div className="flex justify-center items-center gap-2">
