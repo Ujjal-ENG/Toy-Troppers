@@ -160,7 +160,7 @@ function AuthProvider({ children }) {
     if (loading) {
         return (
             <div className="h-screen flex justify-center items-center">
-                <Lottie options={defaultOptions} height={700} width={600} />
+                <Lottie options={defaultOptions} className="w-full md:max-w-2xl" />
             </div>
         );
     }
