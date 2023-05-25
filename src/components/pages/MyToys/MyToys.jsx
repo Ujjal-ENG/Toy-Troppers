@@ -97,14 +97,6 @@ const MyToys = () => {
     const handleSort = (data) => {
         setSortBy(data);
     };
-    if (loading) {
-        return (
-            <div className="h-screen flex justify-center items-center">
-                <progress className="progress w-56" />
-            </div>
-        );
-    }
-    let count = 1;
 
     return (
         <div>
@@ -128,50 +120,57 @@ const MyToys = () => {
                                 <th />
                             </tr>
                         </thead>
-                        <tbody>
-                            {/* row 1 */}
-                            {toys &&
-                                toys.map((toy) => (
-                                    <tr key={toy?._id}>
-                                        <th>{count++}</th>
-                                        <td>
-                                            <div className="flex items-center justify-center space-x-3">
+                        {loading ? (
+                            <div className=" flex justify-center items-center h-[400px] max-w-7xl mx-auto">
+                                <progress className="progress w-56" />
+                            </div>
+                        ) : (
+                            <tbody>
+                                {/* row 1 */}
+                                {toys &&
+                                    toys.map((toy) => (
+                                        <tr key={toy?._id}>
+                                            <th>
                                                 <div className="avatar">
-                                                    <div className="mask mask-squircle w-12 h-12">
+                                                    <div className="mask mask-squircle w-12 md:w-20 h-12 md:h-20">
                                                         <img src={toy?.pictureUrl} alt={toy?.name} />
                                                     </div>
                                                 </div>
-                                                <div>
-                                                    <div className="">
-                                                        Name: <span className="font-bold text-orange-600">{toy?.name}</span>
-                                                    </div>
-                                                    <div className="">
-                                                        SubCategory: <span className="font-bold text-orange-600">{toy?.subCategory}</span>
-                                                    </div>
-                                                    <div className="">
-                                                        AVAILABLE QUANTITY: <span className="font-bold text-orange-600">{toy?.availableQuantity}</span>
+                                            </th>
+                                            <td>
+                                                <div className="flex items-center justify-center space-x-3">
+                                                    <div>
+                                                        <div className="">
+                                                            Name: <span className="font-bold text-orange-600">{toy?.name}</span>
+                                                        </div>
+                                                        <div className="">
+                                                            SubCategory: <span className="font-bold text-orange-600">{toy?.subCategory}</span>
+                                                        </div>
+                                                        <div className="">
+                                                            AVAILABLE QUANTITY: <span className="font-bold text-orange-600">{toy?.availableQuantity}</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <span className="font-bold text-xl text-orange-500">{toy?.sellerName}</span>
-                                            <br />
-                                            <span className="badge badge-ghost badge-sm">{toy?.sellerEmail}</span>
-                                        </td>
-                                        <td className="text-xl font-bold">${toy?.price}</td>
-                                        <td className="truncate line-clamp-10 max-w-[150px] ">{toy?.detailDescription}</td>
-                                        <th>
-                                            <label htmlFor="my-modal-5" type="button" className="btn btn-ghost btn-md" onClick={() => handleEdit(toy._id)}>
-                                                <BiEdit className="text-3xl text-orange-500" />
-                                            </label>
-                                            <button type="button" className="btn btn-ghost btn-md" onClick={() => handleDelete(toy._id)}>
-                                                <AiFillDelete className="text-3xl text-red-500" />
-                                            </button>
-                                        </th>
-                                    </tr>
-                                ))}
-                        </tbody>
+                                            </td>
+                                            <td>
+                                                <span className="font-bold text-xl text-orange-500">{toy?.sellerName}</span>
+                                                <br />
+                                                <span className="badge badge-ghost badge-sm">{toy?.sellerEmail}</span>
+                                            </td>
+                                            <td className="text-xl font-bold">${toy?.price}</td>
+                                            <td className="truncate line-clamp-10 max-w-[150px] ">{toy?.detailDescription}</td>
+                                            <th>
+                                                <label htmlFor="my-modal-5" type="button" className="btn btn-ghost btn-md" onClick={() => handleEdit(toy._id)}>
+                                                    <BiEdit className="text-3xl text-orange-500" />
+                                                </label>
+                                                <button type="button" className="btn btn-ghost btn-md" onClick={() => handleDelete(toy._id)}>
+                                                    <AiFillDelete className="text-3xl text-red-500" />
+                                                </button>
+                                            </th>
+                                        </tr>
+                                    ))}
+                            </tbody>
+                        )}
                     </table>
                 </div>
             )}
